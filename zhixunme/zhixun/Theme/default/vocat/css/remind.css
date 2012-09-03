@@ -1,0 +1,134 @@
+/* 
+    Document   : remind
+    Created on : 2012-5-22, 16:34:51
+    Author     : Jack
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+div.remind .rmd-wrap p.sytip{
+    height: 25px;
+    line-height: 25px;
+    margin:10px 0 10px 0;
+    padding-left:20px;
+    background-color: #fefec8;
+    color: #c17e00;
+    border: 1px #e0cea9 solid;
+}
+div.remind div.rld{
+    width:530px;
+    margin-right:10px;
+}
+div.remind div.sdr{
+    width:240px;
+}
+div.remind .rmd-wrap .set{
+    padding:5px 0 15px 20px;
+}
+div.remind .rmd-wrap  .msg_set {
+    border-bottom:1px dashed #ddd;
+}
+div.remind .rmd-wrap  h2.title{
+    font-size:15px;
+    padding-left:20px;
+}
+div.remind .rmd-wrap  .msg_set p.rtip{
+    padding:5px 0 0 20px;
+    text-indent: 2em;
+    line-height:25px;
+}
+div.remind .rmd-wrap  .msg_set p.rtip a.blue:hover{
+    text-decoration: underline;
+}
+div.remind .rmd-wrap .md_com{
+    border-bottom:1px dashed #ddd;
+    padding:10px 15px 15px 35px;
+    line-height: 30px;
+}
+div.remind .rmd-wrap .lp{
+    border-bottom:1px solid #cdcdcd;
+}
+div.remind .rmd-wrap .md_com .mli{
+    padding:5px 0 0 0;
+    height:30px;
+}
+div.remind .rmd-wrap .md_com .mli span.tl{
+    display: inline-block;
+    width:100px;
+    margin-left:1px;
+}
+div.remind .rmd-wrap .md_com .mli input[type='text']{
+    width:80px;
+    *width:60px;
+    height:25px;
+    margin:0 5px 0 5px;
+}
+div.remind .rmd-wrap .md_com .mli a.gt_m{
+   display: inline-block;
+    width: 20px;
+    height: 10px;
+    *height:15px;
+    background: url('../imgs/system/icons.png') no-repeat 0 -125px;
+}
+div.remind .rmd-wrap .md_com .mli span.ops{
+    display: inline-block;
+    *width:30px;
+    position: relative;
+}
+div.remind .rmd-wrap .md_com .mli span.ops ul{
+    width: 35px;
+    position: absolute;
+    top: 5px;
+    left: -50px;
+    background:#fff;
+    border: 1px solid #DDD;
+    z-index: 888;
+    display: none;
+}
+div.remind .rmd-wrap .md_com .mli span.ops ul li{
+    width:31px;
+    line-height:20px;
+    display: block;
+    cursor:pointer;
+    height:20px;
+    padding-left:5px;
+}
+div.remind .rmd-wrap .md_com .mli span.ops ul li.cur{
+    background-color: #0171CA;
+    color:#fff;
+}
+div.remind .rmd-wrap .rld div.save{
+    width:80px;
+    margin: 30px 0 20px 35px;
+}
+div.remind .rmd-wrap .rld div.save a.btn{
+    line-height: 25px;
+}
+div.remind  .rmd-wrap .sdr .frt{
+    background-color:#f9f9f9;
+}
+div.remind  .rmd-wrap .sdr .frt h2.mtitle{
+    padding:5px 0 10px 20px;
+    font-size:14px;
+}
+div.remind  .rmd-wrap .sdr .frt ul li{
+    padding:5px 10px 15px 20px;
+}
+div.remind  .rmd-wrap .sdr .frt ul li p{
+    line-height: 25px;
+}
+div.remind  .rmd-wrap .sdr .frt ul li div.exap_m{
+    height: 160px;
+    margin:5px 0 0 0;
+    width: 200px;
+    overflow:hidden;
+    background-image: url(../imgs/system/badge.png);
+    background-repeat:no-repeat;
+    background-position:0 -335px;
+}
+div.remind  .rmd-wrap .sdr .frt ul li div.exap_m{
+    background-position:-200px -337px;
+}

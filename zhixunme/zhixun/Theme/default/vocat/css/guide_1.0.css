@@ -1,0 +1,505 @@
+/* 
+    Document   : guide
+    Created on : 2012-6-28, 13:59:24
+    Author     : Candice
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+/*********************************** 角色首页引导流程 **********************************/
+div.rt_cover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1888px;
+    background: url(../imgs/system/gray.png) repeat 0 0;
+    z-index: 1000000;
+    overflow-y:auto;
+    text-align: center;
+}
+div.rt_cover div.rt_bg{
+    width: 980px;
+    margin: 0 auto;
+    position: relative;    
+}
+div.rt_cover div.rt_bg div.navtip,
+div.rt_cover div.rt_bg div.navtip div.pagin a,
+div.funtip p.top,
+div.funtip p.bot,
+div.funtip div.tri p{
+    background: url(../imgs/system/navtip.png) no-repeat;
+}
+div.rt_cover div.rt_bg div.navtip{
+    position: absolute;
+    top: 265px;
+    left: 50%;
+    width: 315px;
+    height: 200px;
+    margin-left: -167px;
+    background-position: 0 -37px;
+    color: #fff;
+}
+div.rt_cover div.rt_bg div.navtip a.rt_close{
+    display: block;
+    width: 20px;
+    height: 20px;
+    float: right;
+    margin: -28px 33px 0 0;
+}
+div.rt_cover div.rt_bg div.navtip p{
+    width: 315px;
+    margin: 132px 0 8px 0;
+    font-size: 14px;
+}
+div.rt_cover div.rt_bg div.navtip div.pagin{
+    padding-left: 35px;
+}
+div.hum_cov div.rt_bg div.navtip div.pagin,
+div.com_cov div.rt_bg div.navtip div.pagin{
+    padding-left: 40px;
+}
+div.rt_cover div.rt_bg div.navtip div.pagin span,
+div.rt_cover div.rt_bg div.navtip div.pagin a{
+    display: block;
+    float: left;
+    font-size: 5px;
+}
+div.rt_cover div.rt_bg div.navtip div.pagin span{
+    font-size: 12px;
+    width: 60px;
+    height: 15px;
+    cursor: pointer;
+}
+div.rt_cover div.rt_bg div.navtip div.pagin span:hover{
+    text-decoration: underline;
+}
+div.rt_cover div.rt_bg div.navtip div.pagin span.lspan{
+    margin-right: 5px;
+}
+div.rt_cover div.rt_bg div.navtip div.pagin span.rspan{
+    margin-left: 5px;
+}
+div.rt_cover div.rt_bg div.navtip div.pagin a{
+    background-position: -305px -11px;
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+}
+div.rt_cover div.rt_bg div.navtip div.pagin a:hover,
+div.rt_cover div.rt_bg div.navtip div.pagin a.cur{
+    background-position: -305px 4px;
+}
+div.rt_cover div.funtip{
+    text-align: left;
+    position: absolute;
+    top: 20px;
+    left: 0;
+}
+/*左上箭头*/
+div.rt_cover div.funtip div.tri{
+    position: relative;
+}
+div.rt_cover div.funtip div.tri p{
+    background-position: 0 -18px;
+    position: absolute;
+    top: -9px;
+    left: 25px;
+    width: 16px;
+    height: 12px;
+    font-size: 5px;
+}
+/*右上箭头*/
+div.rt_cover div.funtip div.trri p{
+    left: 250px;
+}
+/*下箭头*/
+div.rt_cover div.funtip div.bri p{
+    top: -3px;
+    background-position: -87px -18px;
+}
+/*左箭头*/
+div.rt_cover div.funtip div.lri p{
+    left: -10px;
+    width: 13px;
+    height: 17px;
+    top: 17px;
+    background-position: -45px -18px;
+}
+/*右箭头*/
+div.rt_cover div.funtip  div.rri p{
+    top: 15px;
+    width: 13px;
+    height: 17px;
+    background-position: -133px -18px;
+    right: -10px;
+    left:287px;
+}
+div.rt_cover div.funtip,
+div.rt_cover div.funtip p.top,
+div.rt_cover div.funtip p.bot{
+    width: 290px;
+}
+div.rt_cover div.funtip p.top{
+    height: 5px;
+    background-position: 0 0;
+}
+div.rt_cover div.funtip p.bot{
+    height: 5px;
+    background-position: 0 -7px;
+}
+div.rt_cover div.funtip p.blue,
+div.rt_cover div.funtip p.cont{
+    background-color: #fff;
+    border-left: #3eacf2 3px solid;
+    border-right: #3eacf2 3px solid;
+    padding: 0 12px 6px;
+}
+div.rt_cover div.funtip p.blue{
+    font-size: 16px;
+    padding-top: 13px;
+}
+div.rt_cover div.funtip p.cont{
+    line-height: 20px;
+    color: #232323;
+}
+div.rt_cover div.fun_info{
+    background-color: #fff;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    padding: 5px;
+    position: absolute;
+    text-align: left;
+}
+div.rt_cover div.fun_info div.func_bg{
+    position: relative;
+}
+div.rt_cover div.fun_info a{
+    cursor: default;
+}
+div.rt_cover div.fun_info a:hover{
+    text-decoration: none;
+}
+div.rt_cover div.fun_info div.func_bg div.wh_cov{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000003;
+}
+div.funtip a.blue{
+    text-decoration: underline;
+}
+/*职位管理引导1、2、简历管理引导3、4*/
+div.rt_cover div.funtip1{
+    left: -5px;
+    top: 515px;
+}
+div.rt_cover div.fun_info1,
+div.rt_cover div.fun_info3{
+    width: 160px;
+    top: 353px;
+    left: -5px;
+    padding: 0 5px;
+}
+div.rt_cover div.fun_info1 div.acc_set,
+div.rt_cover div.fun_info3 div.acc_set,
+div.rt_cover div.fun_info5 div.acc_set,
+div.rt_cover div.fun_info8 div.acc_set{
+    border: none;
+}
+div.rt_cover div.fun_info1 div.acc_set .b_com .area_title,
+div.rt_cover div.fun_info3 div.acc_set .b_com .area_title,
+div.rt_cover div.fun_info8 div.acc_set .b_com .area_title{
+    margin-top: 8px;
+}
+div.rt_cover div.fun_info1 div.acc_set div.adb,
+div.rt_cover div.fun_info3 div.acc_set div.adb,
+div.rt_cover div.fun_info8 div.acc_set div.adb{
+    margin-bottom: 7px;
+}
+div.rt_cover div.funtip2,
+div.rt_cover div.funtip4{
+    left: 335px;
+    top: 70px;
+}
+div.rt_cover div.fun_info2,
+div.rt_cover div.fun_info4,
+div.rt_cover div.fun_info9,
+div.rt_cover div.fun_info10,
+div.rt_cover div.fun_info11{
+    width: 87px;
+    height: 48px;
+    padding: 0;
+    top: 0;
+    left: 356px;
+    background-color: transparent;
+}
+div.rt_cover div.fun_info2 div.bh_nav,
+div.rt_cover div.fun_info4 div.bh_nav,
+div.rt_cover div.fun_info9 div.bh_nav,
+div.rt_cover div.fun_info10 div.bh_nav,
+div.rt_cover div.fun_info11 div.bh_nav{
+    background: url(../imgs/system/xgrad_1.png) repeat-x 0px -266px;
+    height: 48px;
+    text-align: center;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+div.rt_cover div.fun_info2 div.bh_nav a,
+div.rt_cover div.fun_info4 div.bh_nav a,
+div.rt_cover div.fun_info9 div.bh_nav a,
+div.rt_cover div.fun_info10 div.bh_nav a,
+div.rt_cover div.fun_info11 div.bh_nav a{
+    color: #fff;
+    display: inline-block;
+    line-height: 48px;
+    width: 88px;
+    font-size: 14px;
+}
+div.rt_cover div.funtip3{
+    left: -5px;
+    top: 363px;
+}
+div.rt_cover div.fun_info3{
+    top: 201px;
+}
+div.rt_cover div.funtip2{
+    left: 369px;
+}
+div.rt_cover div.fun_info4,
+div.rt_cover div.funtip4{
+    left: 271px;
+}
+/*个性推荐引导5、6*/
+div.rt_cover div.fun_info5{
+    width: 160px;    
+    left: -5px;
+    top: 660px;   
+    *top:655px;
+    padding: 0 5px;
+}
+div.rt_cover div.funtip5{
+    left: -5px;
+    top: 545px;
+}
+div.rt_cover div.fun_info5 div.acc_set .b_com{
+    border: none;
+}
+div.rt_cover div.funtip6{
+    top: 63px;
+    left: 735px;
+}
+div.rt_cover div.fun_info6{
+    width: 520px;
+    left: 185px;
+    top: 63px;
+    padding: 0 5px;
+    background: -moz-linear-gradient(bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,.8) 35%,rgba(255,255,255,.9) 45%, #fff 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, center bottom, center top, color-stop(0%,rgba(255,255,255,0)), color-stop(35%,rgba(255,255,255,.8)), color-stop(45%,rgba(255,255,255,.9)), color-stop(100%,#fff)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(bottom, rgba(255,255,255,0) 0%,rgba(255, 255, 255, 0.8) 35%,rgba(255, 255, 255, 0.9) 45%,#fff 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,.8) 35%,rgba(255,255,255,.9) 45%,#fff 100%); /* Opera11.10+ */
+    background: -ms-linear-gradient(bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,.8) 35%,rgba(255,255,255,.9) 45%,#fff 100%); /* IE10+ */
+    background: linear-gradient(bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,.8) 35%,rgba(255,255,255,.9) 45%,#fff 100%); /* W3C */
+}
+div.rt_cover div.fun_info6 .nH a.rC em{
+    display: block;
+    width: 10px;
+    height: 10px;
+    float: right;
+    margin: 10px 0 0 5px;
+    background: url('../imgs/system/icons.png') -4px -198px;
+}
+/*套餐统计引导7*/
+div.rt_cover div.funtip7{
+    top: 72px;
+    left: 420px;
+}
+div.rt_cover div.fun_info7{
+    width: 236px;
+    left: 732px;
+    top: 72px;
+    padding: 0 5px;
+}
+div.rt_cover div.fun_info7 div.L-r div.dm h2.ct,
+div.rt_cover div.fun_info7 div.L-r div.dm{
+    margin-top: 0;
+    padding-top: 0;
+    border-bottom: none;
+}
+div.rt_cover div.fun_info7 .nH .tk {
+    padding-bottom: 0
+}
+div.rt_cover div.fun_info7 div.L-r div.nH div.tk ul.Tj li{
+    width: 243px;
+    height: 18px;
+    float: left;
+    margin: 3px 0 6px 0;
+    padding: 0;
+    text-align: center;
+}
+div.rt_cover div.fun_info7 div.L-r div.nH div.tk ul.Tj li em.gray {
+    float: left;
+}
+div.rt_cover div.fun_info7 div.L-r div.nH div.tk ul.Tj li em.fr {
+    float: right;
+    margin-right: 15px;
+}
+div.rt_cover div.fun_info7 div.L-r div.nH div.butn {
+    clear: left;
+}
+div.rt_cover div.fun_info7 div.L-r div.dm div.tk div.butn div.butn2 a.butn2, 
+div.rt_cover div.fun_info7 div.L-r div.butn a.butn1, 
+div.rt_cover div.fun_info7 div.L-r div.butn a.butn2 {
+    display: block;
+    float: left;
+    text-align: right;
+    width: 195px;
+    height: 50px;
+    margin-top: 5px;
+    padding-right: 40px;
+    background: url('../imgs/system/icons.png') no-repeat 0px -385px;
+    line-height: 45px;
+    font-size: 16px;
+    color: #0c7cce;
+}
+div.rt_cover div.fun_info7 div.L-r div.butn a.butn1 {
+    margin-top: 10px;
+}
+div.rt_cover div.fun_info7 div.L-r div.butn a.butn1 span, 
+div.rt_cover div.fun_info7 div.L-r div.butn a.butn2 span, 
+div.rt_cover div.fun_info7 div.L-r div.dm div.tk div.butn div.butn2 a.butn2 span {
+    float: left;
+    line-height: 18px;
+    padding-top: 5px;
+    padding-left: 10px;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+}
+/*站内应用8、客户管理9、行业资讯10*/
+div.rt_cover div.funtip8{
+    top: 654px;
+    left: -5px;
+}
+div.rt_cover div.fun_info8{
+    width: 160px;
+    left: -5px;
+    top: 773px;
+    *top:762px;
+    padding: 0 5px;
+}
+div.rt_cover div.funtip9{
+    top: 70px;
+    left: 240px;
+}
+div.rt_cover div.fun_info9{
+    width: 86px;
+    left: 436px;
+    top: 0;
+    padding: 0 5px;
+}
+div.rt_cover div.funtip10{
+    top: 70px;
+    left: 583px;
+}
+div.rt_cover div.fun_info10{
+    width: 86px;
+    left: 576px;
+    top: 0;
+    padding: 0 5px;
+}
+/*账号引导11*/
+div.rt_cover div.funtip11{
+    top: 70px;
+    left: 636px;
+}
+div.rt_cover div.fun_info11{
+    width: 38px;
+    left: 880px;
+    *left:874px;
+    top: 0;
+    padding: 0 5px;
+}
+div.rt_cover div.fun_info11 div.bh_nav a{
+    font-size: 13px;
+    width: 100%;
+}
+/*人才 - 简历管理*/
+div.hum_cov div.fun_info3{
+    top: 234px;    
+}
+div.hum_cov div.funtip3{
+    top: 313px;
+    *top:320px ;
+}
+/*人才 - 个性推荐*/
+div.hum_cov div.fun_info5{
+    top: 410px;
+}
+div.hum_cov div.funtip5{
+    top: 280px;
+}
+/*人才 - 站内应用、行业资讯*/
+div.hum_cov div.fun_info8{
+    top: 523px;
+    *top:520px
+}
+div.hum_cov div.funtip8{
+    top: 405px;    
+}
+div.hum_cov div.fun_info10{
+    left: 631px;
+    *left:617px;
+}
+div.hum_cov div.funtip10{
+    left: 638px;
+}
+
+/*企业 - 个性推荐*/
+div.com_cov div.fun_info5{
+    top: 380px;
+}
+div.com_cov div.funtip5{
+    top: 249px;
+}
+/*企业 - 站内应用、行业资讯*/
+div.com_cov div.fun_info8{
+    top: 469px;
+}
+div.com_cov div.funtip8{
+    top: 355px;
+}
+div.com_cov div.fun_info10{
+    left: 561px;
+    *left:550px;
+}
+div.com_cov div.funtip10{
+    left: 567px;
+}
+/*步骤控制*/
+div.rt_cover div.guide1{
+    display: block;
+}
+div.rt_cover div.guide2{
+    display: none;
+}
+div.rt_cover div.guide3{
+    display: none;
+}
+div.rt_cover div.guide4{
+    display: none;
+}
+div.rt_cover div.guide5{
+    display: none;
+}
+div.rt_cover div.guide6{
+    display: none;
+}

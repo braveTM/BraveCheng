@@ -1,0 +1,657 @@
+/* 
+    Document   : tool_1.0
+    Created on : 2012-3-22, 16:17:57
+    Author     : Irene && Jack
+    Description:
+        Purpose of the stylesheet follows.
+*/
+/************************************** 市场行情 ****************************************/
+.gn{
+    color:#a4e631;
+}
+div.market div.pages{
+    margin-bottom: 135px;
+}
+div.market div.pages div.pagination{
+    top: 15px;
+    right: 45px;
+}
+div.market p.mark{
+    float: left;
+    margin: 15px 0 0 41px;
+}
+div.market input.qselect{
+    margin-left:15px;
+    width:220px;
+    border:none;
+}
+div.market p.no-data{
+    text-align: center;
+    padding-top:100px;
+    font-size:16px;
+}
+div.market div.myear{
+    height: 32px;
+    line-height: 32px;
+    width:700px;
+    margin: 0 auto 30px auto;
+}
+div.market div.myear span.b_lf,
+div.market div.myear span.b_rf
+{
+    height:32px;
+    width:16px;
+    float:left;
+    background-image:url('../imgs/system/icons.png');
+    background-repeat:no-repeat;
+    background-position:-18px -12px;
+    display:inline-block;
+}
+div.market div.myear div.ys{
+    height:32px;
+    width:636px;
+    background:url('../imgs/system/xgrad.png') repeat-x 0 -712px;
+}
+div.market div.myear span.b_rf{
+    background-position:-18px -46px;
+}
+div.market div.myear div.ys span{
+    display: inline-block;
+    width:80px;
+    margin-left:10px;
+}
+div.market div.myear div.ys a{
+    display:inline-block;
+    text-align: center;
+    width:80px;
+    height:35px;
+    margin:0 10px 0 10px;
+}
+div.market div.myear div.ys a.cuy{
+    background:url('../imgs/system/icons.png') no-repeat -69px -74px;
+    color:#fff;
+}
+div.market div.tdes{
+    margin: 0 auto;
+    line-height: 35px;
+    padding-left: 40px;
+}
+div.market{
+    padding-top:90px;
+}
+div.market div.t_title {
+    margin-bottom: 35px;
+}
+div.market div.t_title p.name {
+    font-size: 17px;
+    line-height: 40px;
+    padding-left: 27px;
+}
+div.market div.t_title p.liner {
+    height: 6px;
+    width: 100%;
+    background: url('../imgs/system/btn.png') repeat-x 0 -532px;
+}
+div.market div.area{
+    margin: 0 auto;
+    padding-left: 40px;
+}
+div.market div.area div.provs{
+    width:800px;
+}
+div.market div.area span.lf{
+    display: inline-block;
+    width:55px;
+}
+div.market div.area div.provs span{
+    display:inline-block;
+    margin:0 0 10px 5px;
+}
+div.market div.area div.provs span a.blue{
+    padding:0 5px 0 5px;
+}
+div.market div.area div.provs span a:hover,
+div.market div.area div.provs span a.cur_prov{
+    background:#1891de;
+    color: #fff;
+}
+div.market .d_p{
+    margin-top:40px;
+}
+div.market div.usch{
+    height: 40px;
+    position:relative;
+    width: 600px;
+    margin: 0 auto 30px auto;
+}
+div.market div.usch+div{
+    padding-left:27px;
+}
+div.market div.usch span.lf,
+div.market div.usch span.rf
+{
+    height:40px;
+    width:20px;
+    background-image:url('../imgs/system/icons.png');
+    background-repeat:no-repeat;
+    background-position: -203px -183px;
+    display:inline-block;
+}
+div.market div.usch div.sbox{
+    height:40px;
+    width:560px;
+    background:url('../imgs/system/xgrad.png') repeat-x 0 -746px;
+}
+div.market div.usch div.sbox input#scont{
+    position: absolute;
+    top: 0;
+    left: 16px;
+    border: none;
+    top: 4px;
+    height: 33px;
+    *line-height: 33px;
+    width:480px;
+}
+div.market div.usch div.sbox a.blue{
+    position:absolute;
+    top:0;
+    right:15px;
+    display:inline-block;
+    width:50px;
+    height:40px;
+    line-height:40px;
+    font-size:20px;
+}
+div.market div.usch span.rf{
+    background-position:-223px -183px;
+}
+div.market ul.mktlist{
+    width:890px;
+    margin:0 auto;
+    margin:0 0 20px 40px;
+}
+div.market ul.mktlist li{
+    padding: 20px 0 15px 25px;
+    border-bottom: 1px solid #DDD;
+}
+div.market ul.mktlist li.no-data{
+    text-align:center;
+}
+div.market ul.mktlist li div.lf{
+    margin-right:20px;
+    line-height:30px;
+}
+div.market ul.mktlist li div.mtitle{
+    width:360px;
+    white-space:nowrap;
+    overflow:hidden;
+}
+div.market ul.mktlist li div.mtitle span{
+    width:100%;
+    height:100%;
+    display: inline-block;
+}
+div.market ul.mktlist li div.mtype{
+    width:380px;
+}
+div.market ul.mktlist li div.mtype span.gray{
+    display: inline-block;
+    width:190px;
+    white-space: nowrap;
+    overflow:hidden;
+}
+div.market ul.mktlist li div.mtend{
+    width:60px;
+}
+div.market ul.mktlist li div.mtend div.uprice{
+    width: 10px;
+    height: 20px;
+    background-image: url('../imgs/system/icons.png');
+    background-repeat: no-repeat;
+    background-position: -22px -80px;
+    margin:5px 0 0 20px;
+}
+div.market ul.mktlist li div.mtend div.dwnprice{
+    background-position: -22px -98px;
+}
+div.market ul.mktlist li div.mtend div.eqprice{
+    background-position: -22px -118px;
+}
+/************************************** 合同模板下载 ****************************************/
+div.contract{
+    padding-top: 50px;
+}
+div.contract div.t_title{
+    padding: 40px 0 20px;
+    background-color: #fff;
+    position: relative;
+    z-index: 100;
+}
+div.contract div.t_title p.name{
+    font-size: 17px;
+    line-height: 40px;
+    padding-left: 27px;
+}
+div.contract div.t_title p.liner{
+    height: 6px;
+    width:100%;
+    background: url('../imgs/system/btn.png') repeat-x 0 -532px;
+}
+div.contract ul.mcols li{
+    overflow: visible;
+    /*    height: auto;*/
+    line-height: 24px;
+    padding: 20px 0 20px 20px;
+    border: none;
+}
+div.contract ul.mcols div.f_cl{
+    width: 280px;
+}
+div.contract ul.mcols div.s_cl{
+    width: 45px;
+    *width: 46px;
+    margin-right: 0;
+}
+div.contract ul.mcols div.t_cl{
+    width: 380px;
+    overflow: visible;
+}
+div.contract ul.mcols div.f_cl a{
+    font-size: 15px;
+}
+div.contract ul.mcols div.f_cl a:hover{
+    text-decoration: underline;
+}
+div.contract ul.mcols div.fr_cl{
+    width: 154px;
+    margin-left: 40px;
+}
+div.contract ul.mcols div.fr_cl div.downloadbtn{
+    width: 150px;
+    margin-top: 4px;
+}
+div.contract ul.mcols div.fr_cl div.downloadbtn a{
+    font-size: 20px;
+    line-height: 40px;
+}
+/**************************************** 资讯 - 建设部门通讯簿 ***************************************/
+div.conbook div.t_title {
+    margin-bottom: 20px;
+    padding-bottom: 50px;
+}
+div.conbook div.t_title p.name {
+    font-size: 17px;
+    line-height: 40px;
+    padding-left: 27px;
+}
+div.conbook div.t_title,
+div.conbook div.sort_in{
+    padding-top: 12px;
+    position: fixed;
+    top: 44px;
+    width: 980px;
+    height: 25px;
+    background-color: #fff;    
+}
+div.conbook div.sort_in{
+    width: 930px;
+}
+div.conbook div.sort_in{
+    top: 126px;
+}
+div.conbook div.t_title p.liner {
+    height: 6px;
+    width: 100%;
+    background: url('../imgs/system/btn.png') repeat-x 0 -532px;
+}
+div.conbook div.sort_in{
+    padding:0 27px 20px 27px;
+}
+div.conbook div.sort_in a.blue{
+    display: inline-block;
+    font-size:16px;
+    width: 160px;
+    padding: 0 30px 0 50px;
+}
+div.conbook div.sort_in a.sel{
+    color: #76B704;
+}
+div.conbook div.sort_in a.fa{
+    padding-left:0;
+}
+div.conbook p.gn{
+    color:#686868;
+    padding:20px 0 10px 5px;
+    font-size:14px;
+}
+div.conbook div.bc{
+    padding: 0 20px 20px 20px;
+}
+div.conbook div.rd{
+    padding-top:50px;
+}
+div.conbook div.first,div.conbook div.pt{
+    border-top:100px solid #fff;
+}
+div.conbook table.tb_c{
+    width:100%;
+}
+div.conbook table.tb_c tr.bg{
+    background:#E7F5FF;
+}
+div.conbook table.tb_c td{
+    padding:15px 20px 15px 20px;
+    vertical-align: top;
+}
+div.conbook table.tb_c td.procv{
+    width:1%;
+}
+div.conbook table.tb_c td.orgination{
+    width:5%;
+}
+div.conbook table.tb_c td.phnuber{
+    width:2%;
+}
+div.conbook table.tb_c td.addr{
+    width:5%;
+}
+div.conbook table.tb_c td.material,
+div.conbook table.tb_c td.prgs{
+    width:1%;
+}
+div.conbook table.tb_c a.blue:hover{
+    text-decoration: underline;
+}
+/**************************************** 资讯 - 人事部门通讯簿 ***************************************/
+div.hummancon{
+    padding-top: 85px;
+}
+div.hummancon table.tb_c td.procv{
+    width:4%;
+    margin-left: 20px;
+}
+div.hummancon table.tb_c td.orgination{
+    width:10%;
+}
+div.hummancon table.tb_c td.phnuber{
+    width:10%;
+}
+/**************************************** 资讯 - 查询 ***************************************/
+div.refers{
+    min-height: 1000px;
+}
+div.refers div.t_title{
+    padding-bottom: 20px; 
+}
+div.refers div.refs,
+div.refers p.ref_cover{
+    background-color: #fff;
+    position: relative;
+    z-index: 100;
+    padding-left: 27px;
+}
+div.refers p.ref_cover{
+    height: 15px;
+}
+div.refers div.refs{
+    padding-left: 100px;
+}
+div.refers div.refs span.rtitle{
+    display: inline-block;
+    position: absolute;
+    width: 80px;
+    left: 27px;
+    top: 0;
+    line-height: 30px;
+}
+div.refers div.refs a.a_refer{
+    display: inline-block;
+    width: 170px;
+    overflow: hidden;
+    line-height: 30px;
+    color: #00589a;
+}
+div.refers div.refs a.red{
+    color: #c00;
+}
+div.refers p.ref_loadding{
+    width: 980px;
+    height: 500px;
+    position: absolute;
+    z-index: 101;
+    background: url(../imgs/system/loading.gif) no-repeat center center;
+}
+div.refers .iframeid{
+    position: relative;
+    z-index: 1;
+    width: 795px;
+    margin-left: 93px;
+}
+div.refers div.nolimit{
+    display: none;
+    width: 100%;
+    height: auto;
+    color: #c00;
+    text-align: center;
+    padding: 50px 0;
+}
+/*人员资格查询*/
+div.prefer div.refs a.a_refer{
+    width: 265px;
+}
+div.prefer div.refs a.p_refer{
+    width: 150px;
+}
+div.prefer .iframeid{
+    width: 880px;
+    margin-left: 7px;
+}
+/*受理发证信息查询*/
+div.arefer div.refs a.a_refer{
+    width: 260px;
+}
+div.arefer div.refs a.p_refer{
+    width: 185px;
+}
+div.arefer div.refs a.l_refer{
+    width: 210px;
+}
+div.arefer .iframeid{
+    width: 905px;
+    margin-left: 27px;
+}
+/*设计施工一体化企业*/
+div.refers iframe.curcls0{
+    margin-top: -48px;
+    height: 768px;
+    *margin-top: -55px;
+}
+/*建设工程勘察企业*/
+div.refers iframe.curcls1{
+    margin-top: -48px;
+    *margin-top: -55px;
+    height: 768px;
+}
+/*div.refers iframe.curcls1_8{
+    margin-top: -150px;
+}*/
+/*建设工程设计企业*/
+div.refers iframe.curcls2{
+    margin-top: -48px;
+    *margin-top: -55px;
+    height: 830px;
+}
+/*工程监理企业*/
+div.refers iframe.curcls3{
+    margin-top: -48px;
+    *margin-top: -55px;
+    height: 785px;
+}
+/*工程建设项目招标代理机构*/
+div.refers iframe.curcls4{
+    margin-top: -48px;
+    *margin-top: -55px;
+    height: 768px;
+}
+/*建筑业企业*/
+div.refers iframe.curcls5{
+    margin-top: -48px;
+    *margin-top: -55px;
+    height: 768px;
+}
+/*外商投资城市规划服务企业*/
+div.refers iframe.curcls6{
+    margin-top: -4px;
+    height: 520px;
+}
+/*城市规划编制单位*/
+div.refers iframe.curcls7{
+    margin-top: -4px;
+    height: 520px;
+}
+/*工程造价咨询企业*/
+div.refers iframe.curcls8{
+    margin-top: -20px;
+    margin-top: -11px\0;
+    height: 590px;
+}
+div.refers iframe.curcls8_8{
+    margin-top: -25px;
+}
+/*房地产开发企业*/
+div.refers iframe.curcls9{
+    margin-top: -48px;
+    *margin-top: -55px;
+    height: 700px;
+}
+/*全国建造师信息查询 - 一级注册建造师查询*/
+div.refers iframe.curcls10{
+    margin-top: -45px;
+    *margin-top: -40px;
+    height: 1130px;
+}
+/*全国建造师信息查询 - 一级建造师临时执业证书人员查询*/
+div.refers iframe.curcls11{
+    margin-top: -45px;
+    *margin-top: -40px;
+    height: 1130px;
+}
+/*全国建造师信息查询 - 二级注册建造师查询*/
+div.refers iframe.curcls12{
+    margin-top: -45px;
+    *margin-top: -40px;
+    height: 1130px;
+}
+/*全国建造师信息查询 - 二级建造师临时执业证书人员查询*/
+div.refers iframe.curcls13{
+    margin-top: -45px;
+    *margin-top: -40px;
+    height: 1130px;
+}
+/*注册房地产估价师*/
+div.refers iframe.curcls14{
+    margin-top: -205px;
+    height: 615px;
+    height: 600px\9;
+}
+/*注册建筑师*/
+div.refers iframe.curcls15{
+    margin-top: -45px;
+    height: 745px;
+}
+/*注册工程师*/
+div.refers iframe.curcls16{
+    margin-top: -50px;
+    *margin-top: -55px;
+    height: 775px;
+}
+/*注册监理工程师*/
+div.refers iframe.curcls17{
+    margin-top: 0;
+    height: 605px;
+}
+div.prefer iframe.curcls17{
+    margin-left: 50px;
+}
+/*注册造价工程师*/
+div.refers iframe.curcls18{
+    margin-top: -24px;
+    margin-top: -12px\0;
+    height: 745px;
+}
+div.prefer iframe.curcls18{
+    margin-left: 52px;
+}
+div.refers iframe.curcls18_8{
+    margin-top: -24px;
+}
+/*工程建设项目招标代理机构资格核准*/
+div.refers iframe.curcls19{
+    margin-top: -197px;
+    height: 1055px;
+    height: 1000px\9;
+    *margin-top: -170px;
+    *height: 980px;
+}
+div.refers iframe.curcls19_8{
+    margin-top: -170px;
+    height: 980px;
+}
+/*建筑业企业资质核准*/
+div.refers iframe.curcls20{
+    margin-top: -197px;
+    height: 960px;
+    height: 950px\0;
+    *margin-top: -170px;
+    *height: 930px;
+}
+div.refers iframe.curcls20_8{
+    margin-top: -170px;
+    height: 930px;
+}
+/*监理企业资质核准*/
+div.refers iframe.curcls21{
+    margin-top: -197px;
+    height: 1040px;
+    *margin-top: -170px;
+    *height: 1010px;
+}
+div.refers iframe.curcls21_8{
+    margin-top: -170px;
+    height: 1020px;
+}
+/*建设工程勘察企业资质核准*/
+div.refers iframe.curcls22{
+    margin-top: -197px;
+    height: 1100px;
+    *margin-top: -170px;
+    *height: 1065px;
+}
+div.refers iframe.curcls22_8{
+    margin-top: -170px;
+    height: 1065px;
+}
+/*建设工程设计企业资质核准*/
+div.refers iframe.curcls23{
+    margin-top: -197px;
+    height: 1365px;
+    height: 1120px\0;
+    *margin-top: -170px;
+    *height: 1095px;
+}
+div.refers iframe.curcls23_8{
+    margin-top: -170px;
+    height: 1095px;
+}
+/*设计施工一体化资质核准*/
+div.refers iframe.curcls24{
+    margin-top: -197px;
+    height: 1040px;
+    height: 970px\0;
+    *margin-top: -170px;
+    *height: 950px;
+}
+div.refers iframe.curcls24_8{
+    margin-top: -170px;
+    height: 950px;
+}

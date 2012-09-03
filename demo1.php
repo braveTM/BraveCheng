@@ -163,20 +163,20 @@ printr(bsort(array(1, 3, 44, 2, 134, 1, 23, 0)));
 /**
  * 写一个函数遍历文件夹下所有的文件
   function scan_dir($dir) {
-    $files = array();
-    if (is_dir($dir)) {
-    if ($handle = opendir($dir)) {
-    while (($file = readdir($handle)) !== FALSE) {
-    if ($file != "." && $file != "..") {
-    $files[$file] = scan_dir($dir . "/" . $file);
-    } else {
-    $files[] = $dir . "/" . $file;
-    }
-    }
-    }
-    closedir($handle);
-    return $files;
-    }
+  $files = array();
+  if (is_dir($dir)) {
+  if ($handle = opendir($dir)) {
+  while (($file = readdir($handle)) !== FALSE) {
+  if ($file != "." && $file != "..") {
+  $files[$file] = scan_dir($dir . "/" . $file);
+  } else {
+  $files[] = $dir . "/" . $file;
+  }
+  }
+  }
+  closedir($handle);
+  return $files;
+  }
   }
 
   printr(scan_dir("/usr/share/nginx/www/demo/Demo/"));
@@ -188,22 +188,22 @@ printr(bsort(array(1, 3, 44, 2, 134, 1, 23, 0)));
 
 /**
  * 写一个函数，算出两个文件的相对路径?
-    function getRelativePath($a, $b) {
-        $returnPath = array(dirname($b));
-        $arrA = explode('/', $a);
-        $arrB = explode('/', $returnPath[0]);
-        for ($n = 1, $len = count($arrB); $n < $len; $n++) {
-            if ($arrA[$n] != $arrB[$n]) {
-                break;
-            }
-        }
-        if ($len - $n > 0) {
-            $returnPath = array_merge($returnPath, array_fill(1, $len - $n, '..'));
-        }
+  function getRelativePath($a, $b) {
+  $returnPath = array(dirname($b));
+  $arrA = explode('/', $a);
+  $arrB = explode('/', $returnPath[0]);
+  for ($n = 1, $len = count($arrB); $n < $len; $n++) {
+  if ($arrA[$n] != $arrB[$n]) {
+  break;
+  }
+  }
+  if ($len - $n > 0) {
+  $returnPath = array_merge($returnPath, array_fill(1, $len - $n, '..'));
+  }
 
-        $returnPath = array_merge($returnPath, array_slice($arrA, $n));
-        return implode('/', $returnPath);
-    }
+  $returnPath = array_merge($returnPath, array_slice($arrA, $n));
+  return implode('/', $returnPath);
+  }
  */
 
 

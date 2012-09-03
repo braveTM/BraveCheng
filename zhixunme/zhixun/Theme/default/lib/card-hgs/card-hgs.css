@@ -1,0 +1,289 @@
+/* 
+    Document   : card-hgs
+    Created on : 2012-2-11, 13:01:27
+    Author     : Irene
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+root { 
+    display: block;
+}
+div.cards_cover{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../../vocat/imgs/system/gray.png) repeat 0 0;
+    z-index: 999999;
+    overflow-y: auto;
+    _position:absolute;
+    _background:none;
+}
+div.cards_cover div.card_header{
+    height: 65px;
+    background: url(imgs/white.png) repeat-x 0 0;
+}
+div.cards_cover div.card_header div.c_h_cont{
+    width: 980px;
+    margin: 0 auto;
+}
+div.cards_cover div.card_header div.c_h_cont div.c_h_l,
+div.cards_cover div.card_header div.c_h_cont div.c_h_r{
+    line-height: 65px;
+}
+div.cards_cover div.card_header div.c_h_cont div.c_h_l a.card_close{
+    display: block;
+    float: left;
+    width: 25px;
+    height: 26px;
+    margin: 18px 10px 0 0;
+    background: url(imgs/selecticons.png) repeat-x 0 -112px;
+}
+div.cards_cover div.card_header div.c_h_cont div.c_h_l a.closetxt{
+    background: none;
+    width: 30px;
+    margin-top: 0;
+    color: #00589a;
+}
+div.cards_cover div.card_header div.c_h_cont div.c_h_l em{
+    margin: 0 10px;
+}
+div.cards_cover div.card_header div.c_h_cont div.c_h_r{
+    width: 475px;
+}
+div.cards_cover div.card_header div.c_h_cont div.c_h_r span.des{
+    *float:left;
+}
+div.cards_cover div.card_header div.c_h_cont div.c_h_r div.btn_cont{
+    width: 175px;
+    float: right;
+    margin-top: 11px;
+}
+div.cards_cover div.card_header div.c_h_cont div.c_h_r div.btn_cont a{
+    line-height: 38px;
+    font-size: 20px
+}
+div.cards_cover div.select_bg{
+    width: 980px;
+    margin: 20px auto;
+    text-align: left;
+}
+div.cards_cover div.select_bg div.card_col{
+    width: 485px;
+    float: left;
+    margin-left: 10px;
+}
+div.cards_cover div.select_bg div.card_col1{
+    margin-left: 0;
+}
+div.cards_cover div.select_bg div.card_col div.card{
+    margin-bottom: 10px;
+}
+div.cards_cover div.select_bg div.card_col div.card p.top,
+div.cards_cover div.select_bg div.card_col div.card p.bot,
+div.cards_cover div.select_bg div.card_col div.card div.middle{
+    background: url(imgs/border.png) no-repeat;
+    _overflow:hidden;/*IE6*/
+}
+div.cards_cover div.select_bg div.card_col div.card p.top,
+div.cards_cover div.select_bg div.card_col div.card p.bot{
+    height: 13px;
+    width: 100%;
+    _font-size:13px;/*IE6*/
+}
+div.cards_cover div.select_bg div.card_col div.card p.top{
+    background-position: 0 0;
+}
+div.cards_cover div.select_bg div.card_col div.card p.bot{
+    background-position: -487px 0;
+}
+div.cards_cover div.select_bg div.card_col div.card div.middle{
+    background-position: -974px 0;
+    background-repeat: repeat-y;
+    padding: 10px 0 10px 70px;
+    line-height: 28px;
+    position: relative;
+}
+div.cards_cover div.select_bg div.card_col div.card div.middle p{
+    width: 385px;
+}
+div.cards_cover div.select_bg div.card_col div.card div.middle a.rightpic,
+div.cards_cover div.select_bg div.card_col div.card div.middle em.identpic{
+    position: absolute;
+    display: block;
+    background: url(imgs/selecticons.png) no-repeat;
+}
+div.cards_cover div.select_bg div.card_col div.card div.middle a.rightpic{
+    top: 50%;
+    margin-top: -16px;
+    left: 11px;
+    width: 34px;
+    height: 32px;
+    background-position: -36px -80px;
+    _left:-60px;/*IE6*/
+    _margin-top:-32px;/*IE6*/
+}
+div.cards_cover div.select_bg div.card_col div.card div.middle em.identpic{
+    top: 0;
+    right: 13px;
+    width: 68px;
+    height: 38px;
+    background-position: 0 0;
+}
+div.cards_cover div.select_bg div.card_col div.card div.middle em.person{
+    background-position: 0 -40px;
+}
+div.cards_cover div.select_bg div.card_col div.card div.middle a.rightpic:hover,
+div.cards_cover div.select_bg div.card_col div.card div.middle a.hovered{
+    background: url(imgs/selecticons.png) no-repeat 0 -80px;
+}
+
+/*推广类弹出框*/
+div.prom_card div.select_bg div.bc_item{
+    position: relative;
+}
+div.prom_card div.select_bg div.bc_item div.top,
+div.prom_card div.select_bg div.bc_item div.bot{
+    position: absolute;
+    width: 967px;
+    left: 7px;
+    background: url(../../vocat/imgs/system/xgrad.png) repeat-x;
+    _overflow:hidden;
+}
+div.prom_card div.select_bg div.bc_item div.top{
+    background-position: 0 -601px;
+    top: -5px;
+    _width:979px;/*IE6*/
+    _left:1px;/*IE6*/
+}
+div.prom_card div.select_bg div.bc_item div.bot{
+    background-position: 0 -608px;
+    bottom: -7px;
+    _width:979px;/*IE6*/
+    _left:1px;/*IE6*/
+}
+div.prom_card div.select_bg div.bc_item div.top,
+div.prom_card div.select_bg div.bc_item div.top p{
+    height: 5px;
+}
+div.prom_card div.select_bg div.bc_item div.bot,
+div.prom_card div.select_bg div.bc_item div.bot p{
+    height: 7px;
+}
+div.prom_card div.select_bg div.bc_item div.top p,
+div.prom_card div.select_bg div.bc_item div.bot p{
+    width: 6px;
+    background: url(../../vocat/imgs/system/icons.png) no-repeat;
+    font-size: 5px;
+}
+div.prom_card div.select_bg div.bc_item div.top p.lf{
+    background-position: -173px -153px;
+    margin-left: -6px;
+    _margin: 0;
+}
+div.prom_card div.select_bg div.bc_item div.top p.rf{
+    background-position: -181px -153px;
+    margin-right: -6px;
+    _margin: 0;/*IE6*/
+}
+div.prom_card div.select_bg div.bc_item div.bot p.lf{
+    background-position: -173px -160px;
+    margin-left: -6px;
+}
+div.prom_card div.select_bg div.bc_item div.bot p.rf{
+    background-position: -181px -160px;
+    margin-right: -6px;
+}
+div.prom_card div.select_bg div.bc_item,
+div.prom_card div.select_bg div.bc_item div.middle{
+    background: url(../../vocat/imgs/system/ygrad.png) repeat-y;
+}
+div.prom_card div.select_bg div.bc_item{
+    width: 980px;
+    background-position: 1px 0;
+    padding-left: 6px;
+    margin-bottom: 20px;
+}
+div.prom_card div.select_bg div.bc_item div.middle{
+    width: 974px;
+    background-position: 960px 0;
+}
+div.prom_card div.select_bg div.bc_item div.middle div.mbg{
+    width: 865px;
+    padding: 30px 45px 35px;
+    background-color: #fff;
+    border: 7px solid #d3e9f5;
+}
+div.prom_card div.select_bg div.bc_item div.middle div.mbg div.title{
+    font-size: 18px;
+    font-family: '宋体';
+    color: #888;
+    margin-bottom: 30px;
+    position: relative;
+}
+div.prom_card div.select_bg div.bc_item div.middle div.mbg div.title span.grayer{
+    color: #232323;
+    padding-left: 25px;
+}
+div.prom_card div.select_bg div.bc_item div.middle div.mbg div.title em{
+    font-size: 28px;
+    font-style: italic;
+    font-weight: bold;
+    position: absolute;
+    display: block;
+    top: -8px;
+    left: 80px;
+}
+div.prom_card div.select_bg div.bc_item div.middle div.mbg div.prompic{
+    background: url(../../vocat/imgs/system/promotion.png) no-repeat;
+    width: 360px;
+    height: 255px;
+}
+div.prom_card div.select_bg div.bc_item div.middle div.mbg div.prompic1{
+    background-position: -18px 0;
+}
+div.prom_card div.select_bg div.bc_item div.middle div.mbg div.prompic2{
+    background-position: -18px -750px;
+}
+div.prom_card div.select_bg div.bc_item div.middle div.mbg div.promoper,
+div.prom_card div.select_bg div.bc_item div.middle div.mbg div.promoper p{
+    width: 450px;
+}
+div.prom_card div.select_bg div.bc_item div.middle div.mbg div.promoper{
+    padding: 25px 0 0 50px;
+}
+div.prom_card div.select_bg div.bc_item div.middle div.mbg div.promoper p{
+    color: #a6a6a6;
+    line-height: 30px;
+/*    overflow:hidden;*/
+/*    white-space: nowrap;*/
+/*    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    display: none;*/
+}
+div.prom_card div.select_bg div.bc_item div.middle div.mbg div.promoper p.nosell{
+    color: #c00;
+}
+div.prom_card div.select_bg div.bc_item div.middle div.mbg div.promoper p span.count,
+div.prom_card div.select_bg div.bc_item div.middle div.mbg div.promoper p.leftcount,
+div.prom_card div.select_bg div.bc_item div.middle div.mbg div.promoper p.hasget{
+    color: #47acdf;
+}
+div.prom_card div.select_bg div.bc_item div.middle div.mbg div.promoper div.probtn_cont{
+    width: 135px;
+    margin-top: 35px;
+}
+div.prom_card div.select_bg div.bc_item div.middle div.mbg div.promoper div.probtn_cont a{
+    font-size: 20px;
+    line-height: 40px;
+}
+div.prom_card div.select_bg div.bc_item div.middle div.mbg div.promoper div.probtn_cont div.btn7 a{
+    color: #bcbcbc;
+}

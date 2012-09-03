@@ -1,0 +1,561 @@
+/* 
+    Document   : card-hgs
+    Created on : 2012-2-11, 13:01:27
+    Author     : Irene
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+root { 
+    display: block;
+}
+div.cards_cover{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('imgs/gray.png') repeat 0 0;
+    z-index: 999999;
+    overflow-y: auto;
+    _background:none;
+    _position:absolute;/*IE6.0*/
+}
+div.cards_cover div.cardsbody{
+    width: 800px;
+    margin: 100px auto;
+    text-align: left;
+}
+div.cards_cover div.cardsbody div.bc_item div.middle {
+    background: url('imgs/ygrad.png') repeat-y;
+    width: 774px;
+    background-position: 960px 0;
+}
+div.cards_cover div.cardsbody div.bc_item div.middle div.mbg {
+    width: 650px;
+    padding: 30px 45px 40px 0;
+    background-color: white;
+    border: 7px solid #D3E9F5;
+    position: relative;
+}
+div.cards_cover div.cardsbody div.bc_item div.middle div.mbg div.msghead{
+    text-align: left;
+    padding-left: 30px;
+}
+div.cards_cover div.cardsbody div.bc_item div.middle div.mbg table{    
+    width:100%;
+}
+div.cards_cover div.cardsbody div.bc_item div.middle div.mbg table td{
+    text-align: right;    
+}
+div.cards_cover div.cardsbody div.bc_item div.middle div.mbg table tr td{
+    padding-top:15px;
+}
+div.cards_cover div.cardsbody div.bc_item div.middle div.mbg table tr td.ltop span{
+    text-align: right;
+    width:80px;
+    display: inline-block;
+    padding:5px 10px 10px 10px;
+}
+div.cards_cover div.cardsbody div.bc_item div.middle span.nowstage{
+    text-align: left;
+    padding-left: 10px;
+}
+div.cards_cover div.cardsbody div.bc_item div.middle span.nowstage select{
+    width:160px;
+}
+div.cards_cover div.cardsbody div.bc_item div.middle span.nowstage select.prog{
+    margin-left: 10px;
+}
+div.cards_cover div.cardsbody div.bc_item div.middle div.mbg table tr td.nowstage span{
+    padding-left:10px;
+}
+div.cards_cover div.cardsbody div.bc_item div.middle div.mbg .al_bt span.red{
+    padding-left:85px
+}
+div.cards_cover div.cardsbody div.bc_item div.middle div.mbg table td textarea{
+    width:540px;
+    height:200px;
+}
+div.cards_cover div.cardsbody div.bc_item div.middle div.mbg a.card_close{
+    position: absolute;
+    right:0;
+    top:0;
+    width:25px;
+    height:25px;    
+    background: url(imgs/icons.png) no-repeat -70px -239px;
+}
+div.cards_cover div.cardsbody div.bc_item div.middle div.mbg div.al_bt{
+  padding: 11px 0px 0 15px;
+ line-height: 30px;
+}
+div.cards_cover div.cardsbody div.bc_item div.middle div.mbg div.msgbutton{
+    width:100px;
+    height: 30px;
+    float:right;  
+}
+div.cards_cover div.cardsbody div.bc_item div.middle div.mbg div.msgbutton a.btn{
+    display: block;
+    line-height: 30px;    
+}
+
+/************************************************************************/
+/* 
+    Document   : card-hgs
+    Created on : 2012-2-11, 13:01:27
+    Author     : Irene
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+root { 
+    display: block;
+}
+div.cards_cover{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(imgs/gray.png) repeat 0 0;
+    z-index: 999999;
+    overflow-y: auto;
+    _position:absolute;
+    _background:none;
+    _height:1000px;
+}
+div.cards_cover div.select_bg{
+    position: absolute;
+    top: 50%;
+    margin-top: -160px;
+    left: 50%;
+    margin-left: -325px;
+    width: 650px;
+    text-align: left;
+}
+div.cards_cover div.ewt{
+   margin-top: -216px;
+}
+div.cards_cover div.cardsbody div.bc_item{
+    _position:relative;
+}
+div.slt_card div.select_bg div.bc_item,
+div.slt_card div.select_bg div.bc_item div.middle{
+    background: url('imgs/ygrad.png') repeat-y;
+}
+div.slt_card div.select_bg div.bc_item{
+    position: relative;
+    background-position: 1px 0;
+    padding-left: 6px;
+}
+div.slt_card div.select_bg div.bc_item div.middle{
+    background-position: 759px 0;
+    padding-right: 7px;
+    position: relative;
+}
+div.slt_card div.select_bg div.bc_item a.close_slt {
+    display: block;
+    width: 26px;
+    height: 25px;
+    position: absolute;
+    top: 7px;
+    right: 14px;
+    z-index:10;
+    background: url('imgs/icons.png') no-repeat -68px -240px;
+}
+div.slt_card div.select_bg div.bc_item div.top,
+div.slt_card div.select_bg div.bc_item div.bot,
+div.cards_cover div.cardsbody div.bc_item div.top,
+div.cards_cover div.cardsbody div.bc_item div.bot
+{
+    position: absolute;
+    width: 632px;
+    left: 7px;
+    background: url('imgs/xgrad.png') repeat-x;
+    _font-size:7px;/*IE6.0*/
+}
+div.cards_cover div.cardsbody div.bc_item div.top,
+div.cards_cover div.cardsbody div.bc_item div.bot{
+    position: inherit;
+    height:5px;
+    width:701px;
+    margin-left:4px;
+    _width:712px;/*IE6.0*/
+    _margin:0;/*IE6.0*/
+    _left:-1px;/*IE6.0*/
+}
+div.slt_card div.select_bg div.bc_item div.top,div.cards_cover div.cardsbody div.bc_item div.top{
+    background-position: 0 -601px;
+    top: -5px;
+}
+div.slt_card div.select_bg div.bc_item div.bot,div.cards_cover div.cardsbody div.bc_item div.bot{
+    background-position: 0 -608px;
+    bottom: -7px;
+    *bottom:0;/*IE7*/
+    _bottom:-6px;/*IE6*/
+}
+div.slt_card div.select_bg div.bc_item div.top,
+div.slt_card div.select_bg div.bc_item div.top p,
+div.cards_cover div.cardsbody  div.bc_item div.top p{
+    height: 5px;
+}
+div.slt_card div.select_bg div.bc_item div.bot,
+div.slt_card div.select_bg div.bc_item div.bot p,
+div.cards_cover div.cardsbody  div.bc_item div.bot p
+{
+    height: 7px;
+}
+div.slt_card div.select_bg div.bc_item div.top p,
+div.slt_card div.select_bg div.bc_item div.bot p,
+div.cards_cover div.cardsbody  div.bc_item div.top p,
+div.cards_cover div.cardsbody  div.bc_item div.bot p
+{
+    width: 6px;
+    background: url('imgs/icons.png') no-repeat;
+   _font-size:5px;/*IE6.0*/
+}
+div.slt_card div.select_bg div.bc_item div.top p.lf,
+div.cards_cover div.cardsbody  div.bc_item div.top p.lf{
+    background-position: -173px -153px;
+    margin-left: -6px;
+    _margin:0;/*IE6.0*/
+}
+div.slt_card div.select_bg div.bc_item div.top p.rf,
+div.cards_cover div.cardsbody  div.bc_item div.top p.rf{
+    background-position: -181px -153px;
+    margin-right: -6px;
+    _margin:0;/*IE6.0*/
+}
+div.slt_card div.select_bg div.bc_item div.bot p.lf,
+div.cards_cover div.cardsbody  div.bc_item div.bot p.lf{
+    background-position: -173px -160px;
+    margin-left: -6px;
+    _margin:0;/*IE6.0*/
+}
+div.slt_card div.select_bg div.bc_item div.bot p.rf,
+div.cards_cover div.cardsbody  div.bc_item div.bot p.rf{
+    background-position: -181px -160px;
+    margin-right: -6px;
+    _margin:0;/*IE6.0*/
+}
+div.slt_card div.select_bg div.bc_item div.middle div.mbg{
+/*    width: 672px;*/
+    padding: 30px 20px 10px 30px;
+    background-color: #fff;
+    border: 7px solid #d3e9f5;
+}
+div.slt_card div.select_bg div.bc_item div.middle div.mbg span.gray{
+    padding-left: 12px;
+    line-height: 25px;
+}
+div.slt_card div.select_bg div.bc_item div.middle div.mbg .m_wrap{
+    font-size: 16px;
+    margin-bottom: 30px
+}
+div.slt_card div.select_bg div.bc_item div.middle div.next {
+    padding-top: 10px;
+    border-top: 1px dashed #DDD;
+    margin: 60px 0 0;
+    height: 20px;
+    position: relative;
+}
+div.slt_card div.select_bg div.bc_item div.middle div.next div.btn_common {
+    width: 90px;
+    position: absolute;
+    right: 0;
+    top: 18px;
+}
+div.slt_card div.select_bg div.bc_item div.middle div.next div.btn_common a.btn {
+    line-height: 30px;
+    font-size: 14px;
+}
+/********添加人才***********/
+div.slt_card div.ewt{
+    width:980px;
+}
+div.slt_card div.align_m{
+    margin-left:-490px;
+}
+div.slt_card div.select_bg div.bc_item div.middle .mitem{
+   padding: 10px 0 10px 0;
+}
+div.slt_card div.select_bg div.bc_item div.middle .mitem select{
+    width:160px;
+}
+div.slt_card div.select_bg div.bc_item div.middle .mitem span.cmon{
+    display: inline-block;
+    width: 90px;
+}
+div.slt_card div.select_bg div.bc_item div.middle .mitem input.cbox{
+    width: 200px;
+    height: 25px;
+}
+div.slt_card div.select_bg div.bc_item div.middle .sv_res{
+    width:80px;
+    position: relative;
+}
+/****发送邮件****/
+div.slt_card div.select_bg div.ewraper div.etop{
+    height:8px;
+    width:100%;
+    background:url('imgs/mailtop.png') repeat-x 0 0;
+}
+div.slt_card div.select_bg div.ewraper a.close_slt{
+    position: absolute;
+    right: 30px;
+    top: 35px;
+}
+div.slt_card div.select_bg div.ewraper{
+    background:#fff;
+    position: relative;
+}
+div.slt_card div.select_bg div.ewraper table td.ltop{
+    vertical-align: top;
+}
+div.slt_card div.select_bg div.ewraper table{
+    margin:15px 20px 0 0;
+}
+div.slt_card div.select_bg div.ewraper table td{
+    padding:10px 10px 10px 10px;
+}
+div.slt_card div.select_bg div.ewraper table td input.tbox{
+    width:780px;
+    height:25px;
+}
+div.slt_card div.select_bg div.ewraper table td textarea.cin{
+    width:780px;
+    height:240px;
+    line-height:25px;
+    padding:5px 5px 10px 5px;
+}
+div.slt_card div.select_bg div.ewraper div.ebg{
+    padding:0 0 20px 0;
+}
+div.slt_card div.select_bg div.ewraper div.ebg span.error{
+   margin: 14px 0 10px 109px;
+}
+div.slt_card div.select_bg div.ewraper table td.ltop span{
+    width:80px;
+    display: inline-block;
+    text-align: right;
+}
+div.slt_card div.select_bg div.ewraper  div.slt_items a{
+    display: inline-block;
+    line-height: 21px;
+    border-bottom: 1px solid #d9d9d9;
+    background: #f5f5f5 url('imgs/slticons.png') no-repeat right 0;
+    padding: 0 20px 0 7px;
+    margin: 0 5px 5px 0;
+}
+div.slt_card div.select_bg div.ewraper  div.slt_items a:hover,
+div.slt_card div.select_bg div.ewraper  div.slt_items a.cur_a{
+    background-color: #d9eefb;
+    background-position: right -21px;
+}
+div.slt_card div.select_bg div.ewraper div.ebg div.save{
+    width:100px;
+    float:right;
+   margin: 10px 79px 0 0;
+}
+div.slt_card div.select_bg div.ewraper div.ebg div.save a.btn{
+    line-height:25px;
+}
+/************导入人才资源对话框样式****************/
+div.slt_card div.select_bg  div.import div.upfile_l{
+	float:left;	
+	width: 260px;
+}
+
+div.slt_card div.select_bg  div.import div.upfile_l .title {
+    font-size:16px;
+}
+div.slt_card div.select_bg div.bc_item div.middle div.mbg div.import div.download_r{
+	float:left;
+	margin-top:83px;
+	padding:0 0 0 25px;
+	height:100px;
+	border-left:1px dashed #CCC;	
+}
+div.slt_card div.select_bg div.bc_item div.middle div.mbg div.import div.notemsg{
+    font-size: 12px;
+    text-indent: 16px;
+    position: absolute;
+    left: 38px;
+    top: 66px;
+    width: 560px;
+    line-height: 25px;
+    background-color: #FFFFE5;
+    color: #C99414;
+    border: 1px #F7F6D4 solid;
+}
+#upfile_cdetail div.select_bg div.bc_item div.middle div.mbg div.notemsg,
+#upfile_hdetail div.select_bg div.bc_item div.middle div.mbg div.notemsg,
+div.upfile_button div.up_button div.download_r div.downloadfile_button div.notemsg{
+      position: absolute;
+      top: 140px;
+      left: 70px;
+      width:200px;
+      height:50px;
+}
+#upfile_hdetail div.bcard_data,#upfile_cdetail div.bcard_data{
+    margin-left:-310px;
+}
+#upfile_hdetail div.select_bg,#upfile_cdetail div.select_bg{
+    width: 615px;
+}
+#upfile_hdetail div.select_bg div.bot,#upfile_cdetail div.select_bg div.bot,#upfile_cdetail div.select_bg div.top,#upfile_hdetail div.select_bg div.top{
+    width: 597px;
+    _width:609px;/*IE6*/
+    _left:-6px;/*IE6*/
+}
+#upfile_cdetail div.select_bg div.bc_item div.middle div.mbg div.notemsg, 
+#upfile_hdetail div.select_bg div.bc_item div.middle div.mbg div.notemsg{
+    top: 224px;
+    left: 208px;
+    line-height: 50px;
+    text-align: center;
+}
+div.upfile_button div.up_button div.download_r div.downloadfile_button div.notemsg{
+    top: 80px;
+    left: 0;
+}
+div.slt_card div.select_bg div.bc_item div.middle div.mbg div.import div.upfile_l div.upfile_button{
+	padding: 80px 0 0 40px;
+}
+div.upfile_button div.up_button,div.upfile_button div.up_button span.b_lf,
+div.upfile_button div.up_button span.b_rf,
+div.download_r div.downloadfile_button{
+	display:block;
+	background:url('imgs/import_buton.png') repeat-x 0 -110px;	
+}
+div.upfile_button div.up_button,div.download_r div.downloadfile_button{
+	width:178px;
+	height:54px;
+	position:absolute;	
+        overflow: hidden;
+}
+div.slt_card div.select_bg div.bc_item div.middle div.mbg div.import div.upfile_button  div.notemsg{
+    margin-top: 70px;
+    *margin:150px 0 0 30px;    
+    position:inherit;
+    width:auto;
+    border:none;
+    background-color:#fff;
+    text-indent: 0;
+    color:#000;
+}
+div.slt_card div.select_bg div.bc_item div.middle div.mbg div.import div.upfile_l div.red{
+    line-height: 20px;
+    color: #C00;
+}
+div.import span.notetext{
+    text-align: center;
+    padding-left: 10px;    
+    float: left;
+}
+div.upfile_button div.up_button span.b_lf,div.upfile_button div.up_button span.b_rf{
+	background-position:0 0;
+	background-repeat:no-repeat;
+	width:5px;
+	height:54px;
+	position:absolute;
+	top:0;
+	left:0;
+}
+div.upfile_button div.up_button span.b_rf{
+	background-position:0 -55px;
+	left:173px;
+}
+div.upfile_button div.up_button a.btn{	
+	display:block;
+	line-height:54px;
+	text-align:center;	
+	margin:0 auto;
+	color:#0c72bb;
+}
+div.download_r div.downloadfile_button{
+	width: 130px;
+        height: 35px;
+        background-position-y: -203px;
+        margin-top:30px;
+        margin-left: 65px;
+}
+
+div.download_r div.downloadfile_button a.btn{
+	display:block;
+	line-height:35px;
+	text-align:center;
+	color:#0c72bb;
+}
+div.download_r div.downloadfile_button div.down_button span.b_lf,div.download_r div.downloadfile_button div.down_button span.b_rf{
+	width:5px;
+	height:35px;
+	background:url('imgs/import_buton.png') repeat-x 0 -110px;	
+	background-position:0 -166px;
+	position:absolute;
+	top:0;
+	left:125px;
+}
+div.download_r div.downloadfile_button div.down_button span.b_lf{
+	background-position:0 -239px;
+	left:0;
+}
+div.slt_card div.select_bg div.bc_item div.middle div.mbg div.import{
+    height: 250px;    
+}
+#sendmsgtozx input.upcvsfile,#sendmsgtozx input.d_upfile{	
+	cursor:pointer;
+	height:55px;
+	filter:alpha(opacity=0);-moz-opacity:.0;opacity:0.0; 
+	width:178px;
+	position:relative;
+	top:-55px;        
+        font-size: 54px;        
+        z-index: 99;
+}
+div.upfile_button div.up_button form a.btn{
+    height: 55px;
+    width: 178px;
+    overflow: hidden;
+    cursor:pointer;
+}
+div.slt_card div.select_bg div.bc_item div.middle div.mbg div.upfile_detail{
+    height: 200px;
+}
+div.slt_card div.select_bg div.bc_item div.middle div.mbg div.upfile_detail div.select_type,
+div.slt_card div.select_bg div.bc_item div.middle div.mbg div.upfile_detail div.upfile_button{
+    width: 200px;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+div.slt_card div.select_bg div.bc_item div.middle div.mbg div.upfile_detail div.select_type{
+    width:430px;
+    text-align: center;
+}
+div.slt_card div.select_bg div.bc_item div.middle div.mbg div.upfile_detail div.select_type a{
+    background: url(imgs/slticons.png) no-repeat 0 -45px;
+    padding-left: 20px;
+    width:80px;
+    padding-right: 25px;
+}
+div.slt_card div.select_bg div.bc_item div.middle div.mbg div.upfile_detail div.select_type a.selected{
+    background-position: 0 -65px;
+}
+div.slt_card div.select_bg div.bc_item div.middle div.mbg div.upfile_detail div.upfile_button{
+    padding-top:50px;
+}
+#import_hr div.select_bg div.bc_item div.middle div.mbg div.import span.notemsg,#import_cmp div.select_bg div.bc_item div.middle div.mbg div.import span.notemsg{
+    display: block;
+    clear: both;
+    padding: 20px 0 0 35px;
+}

@@ -1,0 +1,483 @@
+/* 
+    Document   : package_1.0
+    Created on : 2011-12-21, 14:37:38
+    Author     : Irene
+    Description:
+        Purpose of the stylesheet follows.
+*/
+/********************************* 用户套餐管理页 *********************************/
+/*套餐管理*/
+div.package div.mpack div.slide ul li{
+    opacity: 0;
+    width: 245px;
+    float: left;
+    margin: 30px 125px 65px 0;
+    position: relative;
+    background: url('../imgs/system/ygrad.png') repeat-y -30px 0;
+}
+div.package div.mpack div.slide ul li div.mid_bg{
+    background: url('../imgs/system/ygrad.png') repeat-y 205px 0;
+}
+div.package div.mpack{
+    padding-left: 18px;
+}
+div.package div.mpack p.title{
+    color: #8f8f8f;
+}
+div.package div.mpack p.title em{
+    font-size: 18px;
+}
+div.apackage div.mpack div.scro{
+    margin-top: -30px;
+    margin-left: 5px;
+}
+div.apackage div.mpack div.scro span.red{
+    font-size:18px; 
+}
+div.apackage div.mpack div.scro em{
+    display: inline-block;
+    width:35px;
+    height:26px;
+    margin-right: 10px;
+    background:url(../imgs/system/icons.png) no-repeat 0px -320px;
+    position: relative;
+    top: 6px;    
+}
+div.apackage div.mpack div.banner{
+    width:100%;
+    height:35px;
+    margin-top:15px;
+    background:url(../imgs/system/banner.png) no-repeat 0 0;
+}
+div.package div.mpack div.slide,
+div.package div.mpack div.slide ul{
+    width: 745px;
+}
+div.package div.mpack div.slide ul{
+    padding-left: 40px;
+}
+div.package div.mpack div.slide ul li p.isbuy,
+div.package div.mpack div.slide ul li p.isrec,
+div.package div.mpack div.slide ul li div.oper,
+div.package div.mpack div.slide ul li div.top,
+div.package div.mpack div.slide ul li div.bot,
+div.package div.mpack div.slide ul li div.top p,
+div.package div.mpack div.slide ul li div.bot p{
+    background-image: url(../imgs/system/package.png);
+}
+div.package div.mpack div.slide ul li div.top,
+div.package div.mpack div.slide ul li div.bot{
+    position: absolute;
+    background-repeat: no-repeat;
+    width: 250px;
+}
+div.package div.mpack div.slide ul li div.top,
+div.package div.mpack div.slide ul li div.top p{
+    height: 22px;
+}
+div.package div.mpack div.slide ul li div.bot,
+div.package div.mpack div.slide ul li div.bot p{
+    height: 10px;
+}
+div.package div.mpack div.slide ul li div.top{
+    top: -22px;
+    background-position: 125px -34px;
+}
+div.package div.mpack div.slide ul li div.bot{
+    bottom: -10px;
+    background-position: 125px -58px;
+    z-index: 100;
+}
+div.package div.mpack div.slide ul li div.top p,
+div.package div.mpack div.slide ul li div.bot p{
+    width: 125px;
+    background-repeat: no-repeat;
+}
+div.package div.mpack div.slide ul li div.top p{
+    background-position: 0 0;
+}
+div.package div.mpack div.slide ul li div.bot p{
+    background-position: 0 -24px;
+}
+div.package div.mpack div.slide ul li div.mid{
+    margin-left: 4px;
+    width: 236px;
+    color: #99448b;
+    text-align: center;
+    background: url(../imgs/system/packagedot.png) repeat 0 0;    
+}
+div.package div.mpack div.slide ul li p.isbuy,
+div.package div.mpack div.slide ul li p.isrec{
+    background-repeat: no-repeat;
+    background-position: -203px 0;
+    width: 95px;
+    height: 87px;
+    position: absolute;
+    top: -24px;
+    right: 151px;
+}
+div.package div.mpack div.slide ul li p.isgive{
+    background-position-x: -301px;
+}
+div.package div.mpack div.slide ul li p.isrec{
+    background-position: -127px 0;
+    width: 75px;
+    height: 73px;
+    top: -45px;
+    right: -15px;
+    z-index: 1;
+}
+div.package div.mpack div.slide ul li div.mid p.name,
+div.package div.mpack div.slide ul li div.mid p.yearlim{
+    font-size: 16px;
+}
+div.package div.mpack div.slide ul li div.mid p.name{
+    padding: 30px 0 12px 0;
+}
+div.package div.mpack div.slide ul li div.mid p.yearlim{
+    border-top: 1px solid #efefef;
+    line-height: 40px;
+    height: 38px;
+    margin-top: 10px;
+}
+div.package div.mpack div.slide ul li div.mid p.score{
+    padding-bottom: 15px;
+    border-bottom: 1px solid #efefef;
+    margin-bottom: 10px;
+}
+div.apackage div.mpack div.slide ul li div.mid p.score{
+    padding-bottom:5px;
+    margin-bottom:5px;
+}
+div.package div.mpack div.slide ul li div.mid p.score span{
+    font-size: 22px;
+}
+div.apackage div.mpack div.slide ul li div.mid p.score span{
+    font-size: 12px;
+}
+div.apackage div.mpack div.slide ul li div.mid span.send{
+    display:block;
+    margin-top:5px;
+    line-height:25px;
+    border-top:1px solid #efefef;
+}
+div.apackage div.mpack div.slide ul li div.mid span.send em{
+    font-size:14px;
+    padding:0 2px;
+}
+div.apackage div.mpack div.slide ul li div.mid p.score span em{
+    font-size:22px;
+    position: relative;
+    top: 2px;
+}
+div.apackage div.mpack div.slide ul li div.mid p.score span.old_price{
+    text-decoration:line-through;
+    margin-left:15px;
+}
+div.package div.mpack div.slide ul li div.mid p.item span{
+    color: #8f8f8f;
+}
+div.package div.mpack div.slide ul li div.mid p.item{
+    line-height: 30px;
+}
+div.package div.mpack div.slide ul li div.oper{
+    height: 50px;
+    background-position: -7px -324px;
+    width: 101px;
+    position: absolute;
+    bottom: -56px;
+    left: 50%;
+    margin-left: -54px;
+    z-index: 1;
+}
+div.apackage div.mpack div.slide ul li div.col1{
+    left:73px;
+}
+div.apackage div.mpack div.slide ul li div.col2{
+    left:183px;
+}
+div.package div.mpack div.slide ul li div.oper_l{
+    margin-left: -105px;
+}
+div.package div.mpack div.slide ul li div.oper_r{
+    margin-left: 5px;
+}
+div.package div.mpack div.slide ul li div.oper a{
+    width: 101px;
+    display: block;
+    height: 35px;
+    background-color: #44a7e7;
+    color: #fff;
+    text-align: center;
+    line-height: 35px;
+    font-size: 15px;
+}
+div.package div.mpack div.slide ul li div.oper a:hover{
+    background-color: #71c4f9;
+}
+div.package div.mpack div.slide ul li div.oper_f{
+    width: 115px;
+    background-position-x: -1px;
+    margin-left: -61px;
+}
+div.package div.mpack div.slide ul li div.oper_f a,
+div.package div.mpack div.slide ul li div.oper_f a:hover{
+    background-color: #bfbfbf;
+    cursor: default;
+    width: 115px;
+    font-size: 13px;
+}
+div.package div.mpack div.slide{
+    margin-top: 50px;
+    position: relative;
+}
+div.apackage div.mpack div.slide{
+    margin-top:25px;
+}
+div.package div.mpack div.slide a.ctr,
+div.package div.mpack div.slide span.shad{
+    position: absolute;
+    display: none;
+    background: url(../imgs/system/package.png) no-repeat 0 0;
+}
+div.package div.mpack div.slide a.ctr{
+    top: 175px;
+    width: 20px;
+    height: 80px;
+}
+div.package div.mpack div.slide a.lctr{
+    background-position: -154px -306px;
+    left: -25px;
+}
+div.package div.mpack div.slide a.lctr:hover{
+    background-position: -154px -387px;
+}
+div.package div.mpack div.slide a.rctr{
+    background-position: -154px -145px;
+    right: -26px;
+}
+div.package div.mpack div.slide a.rctr:hover{
+    background-position: -154px -226px;
+}
+div.package div.mpack div.slide span.shad{
+    top: 0;
+    width: 20px;
+    height: 510px;
+}
+div.package div.mpack div.slide span.lshad{
+    background-position: -201px 0;
+    left: 0;
+}
+div.package div.mpack div.slide span.rshad{
+    background-position: -177px 0;
+    right: 0;
+}
+div.package div.mpack div.intro{
+    margin: 35px 0 90px;
+}
+div.package div.mpack div.intro p{
+    color: #8f8f8f;
+    line-height: 30px;
+}
+/*使用统计*/
+div.package div.pstat{
+    padding:0 30px;
+}
+div.package div.pstat table{
+    margin-top: 60px;
+}
+div.package div.t_item p.title{
+    margin-top:30px;
+    color: #8f8f8f;
+}
+div.apackage div.t_item p.title{
+    margin-top:10px;
+}
+div.package div.pstat p.title em{
+    font-size: 18px;
+}
+div.package div.pstat table td{
+    border-top: 1px #eee solid;
+    border-right: 1px #eee solid;
+    line-height: 35px;
+    text-align: center;
+    color: #8f8f8f;
+}
+div.package div.pstat table td.one{
+    text-align: right;
+    padding-right: 45px;
+}
+div.package div.pstat table td.one,
+div.package div.pstat table td.three{
+    color: #76b704;
+}
+div.package div.pstat table tr.tr_one td{
+    border-top: none;
+    color: #8f8f8f;
+}
+div.package div.pstat table tr.tr_one td span{
+    font-size: 10px;
+}
+div.package div.pstat table td.one{
+    width: 190px;
+}
+div.package div.pstat table td.two{
+    width: 200px;
+}
+div.package div.pstat table td.three{
+    width: 200px;
+    border-right: none;
+}
+div.package div.pstat p.gray{
+    margin: 90px 0 55px 0;
+}
+div.package div.packtip{
+    color: #8f8f8f;
+}
+div.package div.packtip p.lf{
+    width: 270px;
+    height: 145px;
+}
+div.package div.packtip .lf{
+    padding-top: 60px;
+}
+div.package div.packtip p.pic1,
+div.package div.packtip p.pic2,
+div.package div.packtip div.lf a{
+    padding-top: 0;
+    background: url(../imgs/system/package.png) no-repeat;
+}
+div.package div.packtip p.pic1{
+    background-position: 0 0;
+    margin-right: 50px;
+    width: 170px;
+}
+div.package div.packtip p.pic2{
+    background-position: 0 -145px;
+    width: 150px;
+    height: 130px;
+    margin-right: 70px;
+}
+div.package div.packtip div.lf{
+    width: 150px;
+}
+div.package div.packtip div.lf a{
+    display: block;
+    width: 61px;
+    height: 40px;
+    background-position: 0 -476px;
+}
+div.package div.packtip div.lf a.open{
+    background-position: -63px -476px;
+}
+div.package p.rec_title{
+    color: #8f8f8f;
+    padding: 30px 0;
+}
+div.package div.filter_rec{
+    padding-left: 50px;
+}
+div.package div.rechr_item{
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 2px solid #88c2e7;
+    position: relative;
+}
+div.package div.rechr_item p.trigg{
+    position: absolute;
+    height: 13px;
+    width: 20px;
+    top: -12px;
+    left: 87px;
+    overflow: hidden;
+    background: url('../imgs/system/icons.png') no-repeat -1px -210px;
+    border: none;
+}
+div.package div.rechr_item p.r_tri{
+    left: 270px;
+}
+div.package div.filter_rec label{
+    margin: 0 90px 0 0;
+    padding-left: 5px;
+    font-size: 15px;
+}
+div.package div.rechr_item p.tit_tip{
+    line-height: 25px;
+    background-color: #fefec8;
+    color: #c17e00;
+    border: 1px #e0cea9 solid;
+    padding-left: 7px;
+    
+}
+div.package div.rechr_item  p.f_rec{
+    margin-bottom: 15px;
+}
+div.package div.rechr_item table.sin_rechr{
+    margin-top: 15px;
+}
+div.package div.rechr_item table.sin_rechr div.cz{
+    margin-top:5px;
+}
+div.package div.rechr_item table.sin_rechr div.cz li input{
+    width:18px;
+    float:left;
+}
+div.package div.rechr_item table.sin_rechr div.cz li{
+    width:210px;
+}
+div.package div.rechr_item table.sin_rechr div.cz span{
+    line-height: 30px;
+}
+div.package div.rechr_item table.sin_rechr div.cz span.cost{
+    width:116px;
+    text-align: left;
+}
+div.package div.rechr_item table.sin_rechr td{
+    border: none;
+    text-align: left;
+    color: #232323;
+}
+div.package div.rechr_item table.sin_rechr td.ltd{
+    padding-right: 20px;
+    width: 70px;
+    text-align: right;
+}
+div.package div.rechr_item table.sin_rechr td select,
+div.package div.rechr_item table.sin_rechr td input{
+    width: 155px;
+    height: 23px;
+    line-height: 23px;
+}
+div.package div.rechr_item table.sin_rechr td select{
+    width: 168px;
+    margin-right: 145px;
+}
+div.package div.rechr_item table.sin_rechr td span.unit{
+    width: 42px;
+    display: inline-block;
+    margin: 0 100px 0 5px;
+}
+div.package div.rechr_item div.now_pac{
+    line-height: 28px;
+}
+div.package div.rechr_item div.now_pac p.lf{
+    width: 92px;
+}
+div.package div.rechr_item div.now_pac div.lf{
+    width: 625px;
+}
+div.package div.rechr_item div.now_pac span:not(.red){
+    display: inline-block;
+    width: 435px;
+}
+div.package div.rechr_item div.now_pac span.tit_pac{
+    width: 170px;
+}
+div.package div.rechr_item div.chrbtn{
+    width: 135px;
+    margin: 10px 0 60px 90px;
+}
+div.package div.rechr_item div.chrbtn a{
+    font-size: 21px;
+    line-height: 40px;
+}

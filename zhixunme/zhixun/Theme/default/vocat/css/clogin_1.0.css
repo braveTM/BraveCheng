@@ -1,0 +1,309 @@
+/* 
+    Document   : clogin_1.0
+    Created on : 2012-5-12, 14:19:40
+    Author     : jiang
+    Description:
+       企业登录页.
+*/
+div.tp_hder{
+    height:30px;
+    width:100%;
+    border-bottom:1px solid #ddd;
+    line-height:30px;
+    background:#f9f9f9;
+}
+div.tp_hder div.tp_ct{
+    width:980px;
+    margin:0 auto;
+    position: relative;
+}
+div.tp_hder div.tp_ct a.stp{
+    margin-right:20px;
+}
+div.clogin_h{
+    height: 55px;
+}
+div.clogin_nav{
+    background-color:#005FAC;
+    height: 320px;
+    overflow: hidden;
+}
+div.clogin_nav div.login_cont{
+    width:980px;
+    margin:0 auto;
+}
+/************登录框************/
+div.clogin_nav div.login_cont{
+    background: url("../imgs/temp/e.png") no-repeat scroll 0 0 transparent;
+    height: 320px;
+}
+div.clogin_nav div.login_cont div.login_box{
+    position: relative;
+    float:right;
+    background-color:#fff;        
+    width:272px;    
+    height:250px;
+    padding: 20px;
+    z-index:3;
+}
+div.clogin_nav div.login_cont div.login_copy,
+div.clogin_nav div.login_cont div.login_box{
+        margin-top:15px;  
+}
+div.clogin_nav div.login_cont div.login_copy{
+    position: relative; 
+    float: right;     
+    z-index:1;
+}
+div.clogin_nav div.login_cont div.border{
+     border-radius: 5px;
+     background-color:#686868;
+     width: 326px;
+     height: 361px;
+     filter: alpha(opacity=20);
+     opacity: .20;
+     position: absolute;
+     top:-5px;
+     left:-5px;
+     z-index:1;
+}
+div.clogin_nav div.login_cont div.login_box div.title,
+div.clogin_nav div.login_cont div.login_box div.txt_cont{
+    text-align: left;
+}
+div.clogin_nav div.login_cont div.login_box div.txt_cont span.t{
+    color:#5a5a5a;
+}
+div.clogin_nav div.login_cont div.login_box div.title{
+    margin:0 0 32px 0;
+}
+div.clogin_nav div.login_cont div.login_box div.txt_cont{
+    position: relative;    
+    clear:left;
+    margin-bottom:5px;    
+}
+div.clogin_nav div.login_cont div.login_box div.txt_cont.first{
+    *margin-top: -10px;
+}
+div.clogin_nav div.login_cont div.login_box div.psw{
+    margin-bottom:0px;
+}
+div.clogin_nav div.login_cont div.login_box div.txt_cont input{
+    font-size: 14px;
+    height: 28px;
+    width: 206px;
+    margin-bottom: 15px;
+    border: 1px solid #0171CA;
+    -moz-box-shadow:0 0 5px rgba(0,0,0,0.3) inset;
+    -webkit-box-shadow:0 0 5px rgba(0,0,0,0.3) inset;
+    -khtml-box-shadow:0 0 5px rgba(0,0,0,0.3) inset;
+    box-shadow:0 0 5px rgba(0,0,0,0.3) inset;
+    -moz-border-radius:2px;
+    -webkit-border-radius:2px;
+    border-radius:2px;
+    line-height: 33px\9;
+    *line-height: 33px;
+}
+div.clogin_nav div.login_cont div.login_box div.txt_cont a.fpsd{
+    width: 16px;
+    height: 16px;
+    top: -18px;
+    left: 183px;
+    background: url('../imgs/index/homeicons.png') no-repeat -156px -123px;
+}
+div.clogin_nav div.login_cont div.login_box div.txt_cont span.psdes{
+    position: absolute;
+    width:65px;
+    line-height: 14px;
+    left: 23px;
+}
+div.clogin_nav div.login_cont div.clogin div.check input{
+    width:84px;
+    margin-bottom: 0;
+    float:left;
+}
+div.clogin_nav div.login_cont div.clogin div.check img{    
+    margin:4px 10px 0 16px;    
+    cursor:pointer;
+}
+div.clogin_nav div.login_cont div.clogin div.check a{    
+    line-height:30px;
+}
+div.clogin_nav div.login_cont div.login_box div.txt_cont span.tipmsg,
+div.clogin_nav div.login_cont div.login_box div.txt_cont a.fpsd{
+    display: block;
+    position: absolute;
+}
+div.clogin_nav div.login_cont div.login_box div.txt_cont span.tipmsg {
+    width:228px;
+    top: 0;
+    left: 0;
+    color: #979797;
+    line-height: 31px;
+    padding-left: 60px;
+    font-size:12px;
+}
+div.clogin_nav div.login_cont div.clogin div.txt_cont span.t{
+    display: block;
+    float:left;
+    line-height:30px;
+    width:47px;
+    padding-right:7px;
+    text-align:right;
+}
+div.clogin_nav div.login_cont div.clogin div div.rec_psd{
+    width:120px;
+    margin-top:18px;
+    line-height:24px;
+    text-align:left;
+    clear: left;
+}
+div.clogin_nav div.login_cont div.clogin a.regbtn{    
+    display: block;
+    width:274px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin:0 auto;    
+}
+div.clogin_nav div.login_cont div.login_box a.login_btn{
+    display: block;
+    width: 115px;
+    height: 40px;
+    font-size: 18px;
+    margin-top:5px;
+    color: white;   
+    background: url(../imgs/index/homeicons.png) no-repeat 0 -68px;
+}
+div.clogin_nav div.login_cont div.login_box a.login_btn:hover{
+    background-position: -125px -68px;
+}
+div.clogin_nav div.login_cont div.login_box div.regbtn_cont{
+    margin-top:18px;
+    margin-bottom: 10px;
+}
+div.clogin_nav div.login_cont div.login_box div.regbtn_cont span.b_lf,
+div.clogin_nav div.login_cont div.login_box div.regbtn_cont span.b_rf
+{
+    height: 30px;
+    background: url(../imgs/system/button.png) no-repeat 0 -2556px;
+}
+div.clogin_nav div.login_cont div.login_box div.regbtn_cont span.b_rf{
+    background-position: 0 -2620px;
+}
+div.clogin_nav div.login_cont div.login_box div.regbtn_cont div.btn_common{
+    background: url(../imgs/system/button.png) repeat-x 0 -2588px;    
+}
+div.clogin_nav div.login_cont div.login_box div.regbtn_cont div.regbtn_hov{
+    background-position: 0 -2684px;
+}
+div.clogin_nav div.login_cont div.login_box div.regbtn_cont div.regbtn_hov span.b_lf{
+    background-position: 0 -2652px;
+}
+div.clogin_nav div.login_cont div.login_box div.regbtn_cont div.regbtn_hov span.b_rf{
+    background-position: 0 -2716px;
+}
+div.clogin_nav div.login_cont div.login_box div.regbtn_cont div.btn_common a.regbtn{
+    color:#fff;
+    letter-spacing: 5px
+}
+
+/***********内容区***************/
+div.content{
+    width:980px;
+    margin:0 auto;
+    margin-top:20px;
+}
+div.content ul.sevlist,div.content div.partner,div.content ul.sevlist div.title{
+    float:left;
+}
+div.content ul.sevlist{
+    padding-bottom: 10px;
+}
+div.content ul.sevlist div.title{
+    height: 62px;
+    margin-bottom: 20px;
+}
+div.content div.partner{
+    margin-top:30px;
+    line-height:48px;
+    height: 50px;
+    width:100%;
+}
+div.content div.partner span{
+    width: 877px;
+    padding-left: 25px;
+    display: block;
+    overflow: hidden;
+}
+div.content div.partner h3,
+div.content div.partner a{
+    float:left;
+}
+div.content div.partner a img{
+    float:left;        
+    height: 42px;
+    width:108px;
+    margin-left:45px;    
+}
+div.content ul.sevlist div.desc{
+    clear: left;
+    text-align: left;
+    line-height: 22px;
+}
+div.content ul.sevlist li{
+    width:228px;
+    height: 165px;
+    margin-left: 10px;
+    padding-left:10px;
+    float:left;
+    border-left: 1px solid #e9e9e9;
+}
+div.content ul.sevlist li:first-child{
+    margin-left:0;
+    padding-left:0;
+    border-left:none;
+}
+div.content ul.sevlist div.title h2,
+div.content ul.sevlist div.title span{
+    padding-left:10px;
+}
+div.content ul.sevlist div.title h2{
+    float:left;
+    font-size: 18px;
+    line-height: 30px;
+}
+div.content ul.sevlist div.title span{
+    display:block;
+    float:left;
+    width: 148px;
+    text-align: left;
+}
+div.content ul.sevlist li div.pm,
+div.content ul.sevlist li div.online,
+div.content ul.sevlist li div.resous,
+div.content ul.sevlist li div.servce{
+    background:url(../imgs/index/homeicons.png) no-repeat 0 0;
+    width:55px;
+    height:55px;
+    float:left;
+}
+div.content ul.sevlist li div.online{
+    background-position: -61px 0;
+    width: 48px;
+    height: 65px;
+}
+div.content ul.sevlist li div.resous{
+    background-position: -116px 0;
+    width: 70px;
+    height: 52px;
+}
+div.content ul.sevlist li div.servce{
+    background-position: -195px 0;
+    width: 45px;
+    height: 55px;
+}
+div.simple_footer ul {
+    margin: 0 auto;
+    width: 980px;    
+}

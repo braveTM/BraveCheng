@@ -1,0 +1,160 @@
+/* 
+    Document   : articledeta
+    Created on : 2012-3-8, 18:27:40
+    Author     : Jack
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+/************关于职讯公共部分***************/
+/*Start:公共页面公用样式*/
+html,body{
+    text-align: left;
+    background:#f6f6f6;
+}
+div.dacom div.pub_mid{
+    width: 970px;
+}
+div.dacom div.pub_top div.p_t_txt{
+    width: 980px;
+}
+div.pub_page div.pub_mid div.p_m_top,
+div.pub_page div.pub_mid div.p_m_bot{
+    width: 960px;
+}
+div.pub_page div.pub_mid div.p_m_mid {
+    background-position: 898px 0;
+}
+/*End:公共页面公用样式*/
+.dacom .lay1_l{
+    width:170px;
+    margin-right:20px;
+}
+.dacom .lay1_r{
+    width:740px;
+}
+.dacom div.ml{
+    border-right: 1px solid #DAEDFA;
+    padding: 5px 0 20px 0;
+}
+.dacom div.ml div.nus{
+    height:20px;
+    line-height: 20px;
+    padding:2px 0 2px 10px;
+    font-size:16px;
+    border-left:5px solid #0076cc;
+    border-top:none;
+    border-bottom:none;
+    margin:5px 0 10px 0;
+}
+.dacom div.ml p{
+    line-height: 20px;
+    height:20px;
+    padding:5px 30px 5px 25px;
+    margin: 1px 0 1px -8px;
+}
+.dacom div.ml p a{
+    color: #00589a;
+}
+.dacom div.ml p:hover,
+.dacom div.ml p.cur_p{
+    background-color: #e2f1fb;
+}
+.dacom div.ml p a.tri{
+    margin-right: 10px;
+    display: inline-block;
+    width:10px;
+    height: 10px;
+    background-image: url('../imgs/system/icons.png');
+    background-repeat:no-repeat;
+    background-position: -4px -198px;
+}
+.dacom .lr_ct{
+    width:700px;
+    padding:20px 20px 30px 20px;
+}
+.dacom .lr_ct h2.sort{
+    font-size:46px;
+    color:#dcdcdc;
+    word-spacing: 5px;
+    font-family: scans-serif,Helvetica Neue;
+}
+.dacom .lr_ct h2.sort span.ft{
+    font-family: 华文中宋;
+}
+.dacom .adetail{
+    padding:30px 20px 40px 0;
+    line-height: 30px;
+    overflow: hidden;
+}
+.dacom div.nbt{
+    padding-bottom:0;
+}
+.dacom .adetail p span{
+    display: inline-block;
+}
+.dacom .adetail p span.tf{
+    width:80px;
+    text-align: left;
+    padding:0 0 5px 5px;
+}
+.dacom .adetail h2.title{
+    text-align: center;
+    padding:0 0 30px 0;
+    font-size:30px;
+}
+/*************意见与反馈页面样式*******************/
+.feedback .fdb{
+    width:960px;
+}
+.feedback .fwrap{
+  padding:15px 0 0 20px;
+}
+.feedback .fwrap p.blue{
+    font-size:18px;
+}
+.feedback .fcont{
+    padding:20px 30px 20px 30px;
+}
+.feedback .fcont p.s_tip{
+    padding:0 0 10px 0;
+}
+.feedback .fcont .ctitle{
+    padding:0 0 10px 0;
+}
+.feedback .fcont .con_item{
+    padding:0 10px 10px 30px;
+}
+.feedback .fcont .con_item span.tl{
+    display:inline-block;
+    width:80px;
+    text-align: right;
+}
+.feedback .fcont .con_item input[type='text']{
+    width:200px;
+    height:25px;
+}
+.feedback .fcont .sort_item span{
+    width:265px;
+    display:inline-block;
+    margin:0 15px 10px 10px;
+}
+.feedback .fcont textarea.inbox{
+    width:850px;
+    height:180px;
+    line-height: 24px;
+}
+.feedback .fcont .sub{
+    margin-top: 10px;
+}
+.feedback .fcont .sub div.btn20,.feedback .fcont .sub div.btn20_hov{
+    margin:0 auto;
+    width:100px;
+}
+.feedback .fcont p.stip{
+    margin:10px 0 5px 0;
+}

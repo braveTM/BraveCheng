@@ -1,0 +1,146 @@
+/* 
+    Document   : invite_1.0
+    Created on : 2012-5-18, 16:05:53
+    Author     : yuantingli
+    Description:
+        Purpose of the stylesheet follows.
+*/
+div.invitefr div.sm_tab .sub_title {
+    font-size: 16px;
+    width: 175px;
+    line-height: 22px;
+    display:block;    
+}
+div.invitefr div.inv_way{
+    margin-bottom: 70px;
+}
+div.invitefr div.inv_way div.one,
+div.invitefr div.inv_way div.two,
+div.invitefr div.inv_way div.three{
+    float: left;
+}
+div.invitefr div.inv_way div.one{
+    width: 125px;
+}
+div.invitefr div.inv_way div.two{
+    width: 575px;
+    padding-top: 35px;
+}
+div.invitefr div.inv_way div.three{
+    width: 240px;
+}
+div.invitefr div.inv_way div.one p.pic_1,
+div.invitefr div.inv_way div.one p.pic_2,
+div.invitefr div.inv_way div.one p.pic_3,
+div.invitefr div.inv_way div.three p.show_p1,
+div.invitefr div.inv_way div.three p.show_p2,
+div.invitefr div.inv_way div.three  p.bot{
+    background: url('../imgs/system/badge.png') no-repeat;
+}
+div.invitefr div.inv_way div.one p.pic_1{
+    width: 51px;
+    height: 34px;
+    background-position: -5px 0;
+    margin: 80px 0 0 35px;
+}
+div.invitefr div.inv_way div.one p.pic_2{
+    width: 38px;
+    height: 57px;
+    background-position: -5px -36px;
+    margin: 80px 0 0 35px;
+}
+div.invitefr div.inv_way div.one p.pic_3{
+    width: 54px;
+    height: 30px;
+    background-position: -47px -63px;
+    margin: 80px 0 0 35px;
+}
+div.invitefr div.inv_way div.two .ct_way{
+    padding-left: 35px;
+}
+div.invitefr div.inv_way div.two p.ct_way{
+    padding: 25px 0 25px 35px;
+}
+div.invitefr div.inv_way div.two div.ct_way div.lf input.ebox{
+    width: 180px;
+    height:25px;
+}
+div.invitefr div.inv_way div.two div.items a{
+    display: block;
+    width: 250px;
+    border-bottom: 1px solid #D9D9D9;
+    background:whiteSmoke url(../imgs/system/slticons.png) no-repeat right 0;
+    padding: 2px 20px 0 7px;
+    margin:15px 0 10px 75px;
+    overflow: hidden;
+    white-space: nowrap;
+    word-wrap: break-word;
+    word-break: break-all;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+div.invitefr div.inv_way div.two div.items a:hover{
+    background-color: #d9eefb;
+    background-position: right -21px;
+}
+div.invitefr div.inv_way div.two div.ct_way div.lf input{
+    width: 380px;
+    height: 23px;
+}
+div.invitefr div.inv_way div.two div.ct_way .msg{
+   margin:10px 0 5px 75px; 
+}
+div.invitefr div.inv_way div.two div.ct_way p.lf{
+    padding-top: 5px;
+}
+div.invitefr div.inv_way div.two div.ct_way p.gray{
+    padding-left: 11px;
+}
+div.invitefr div.inv_way div.two div.save{
+    width: 100px;
+    margin: 15px 0 0 75px;
+}
+div.invitefr div.inv_way div.two div.save a{
+    line-height: 25px;
+}
+div.invitefr div.inv_way div.three p.show_p1,
+div.invitefr div.inv_way div.three p.show_p2{
+    margin-top: 45px;
+}
+div.invitefr div.inv_way div.three p.show_p1{
+    background-position: -58px -53px;
+    width: 227px;
+    height: 4px;
+}
+div.invitefr div.inv_way div.three p.show_p2{
+    background-position: -58px 0;
+    width: 227px;
+    height: 37px;
+}
+div.invitefr div.inv_way div.three  p.show_text1,
+div.invitefr div.inv_way div.three  p.show_text2{
+    width: 210px;
+    line-height: 22px;
+    padding: 6px 3px 20px 10px;
+    border: 1px solid #cdcdcd;
+    color: #686868;
+}
+div.invitefr div.inv_way div.three  p.show_text1{
+    border-top: none;
+}
+div.invitefr div.inv_way div.three  p.show_text2{
+    border-top: none;
+    border-bottom: none;
+}
+div.invitefr div.inv_way div.three  p.bot{
+    width: 225px;
+    height: 6px;
+    background-position: -58px -42px;
+}
+div.invitefr div.inv_way p.clr{
+    width: 100%;
+    height: 2px;
+    border-bottom: 1px dashed #d1d1d1;
+    padding-top: 30px;
+}
+

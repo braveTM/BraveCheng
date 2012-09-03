@@ -1,0 +1,1 @@
+function Delegate(){}Delegate.prototype={ValidateAgent:function(b,e,c){var d={url:WEBURL.ValiAgent,params:"nick="+b,sucrender:e,failrender:c};HGS.Base.HAjax(d)},ReplyDele:function(n,m,l,k,j,h,i,g){var o={url:WEBURL.ReplyDele,params:"id="+n+"&contact="+m+"&email="+l+"&qq="+k+"&content="+j+"&status="+h,sucrender:i,failrender:g};HGS.Base.HAjax(o)}};
