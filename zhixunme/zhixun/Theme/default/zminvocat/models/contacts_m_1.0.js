@@ -1,1 +1,0 @@
-function Contacts(){}Contacts.prototype={CheckContWay:function(b,e,f,c){var d={url:WEBURL.GetContact,params:"object_id="+b+"&object_type="+e,sucrender:f,failrender:c};HGS.Base.HAjax(d)}};
