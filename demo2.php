@@ -76,43 +76,4 @@ function str_replace_limit($search, $replace, $subject, $limit = -1) {
     return preg_replace($search, $replace, $subject, $limit);
 }
 
-interface interOne {
-
-    const constance = "contant value";
-
-    public function fun1();
-
-    public function func2();
-
-    function printr();
-
-    abstract public function getError();
-}
-
-class interFrom implements interOne {
-
-    private $error = null;
-
-    function fun1() {
-        return self::constance;
-    }
-
-    function func2() {
-        return;
-    }
-
-    function printr($expression) {
-        echo "<pre>";
-        print_r($expression);
-    }
-
-    function getError($error) {
-        $this->error = $error;
-    }
-
-}
-
-$self = new interFrom();
-$self->printr($self);
-
 phpinfo();
