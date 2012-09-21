@@ -1,4 +1,4 @@
-BaveCheng研究测试GIT
+BaveCheng's GIT
 ====
 
-专注于LNMP,LAMP,PHP各种框架、模式的研究
+专注于LNMP,LAMP,PHP各种代码，方法，框架、模式的研究
