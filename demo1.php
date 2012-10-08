@@ -1,6 +1,6 @@
 <?php
 
-header("Content-type:text/html;charset=UTF-8");
+header("Content-type:text/html;charset=gbk");
 echo "Today is :" . date(DATE_COOKIE);
 
 function ExplodeLines($text, $cloumnNames) {
@@ -185,7 +185,6 @@ printr(bsort(array(1, 3, 44, 2, 134, 1, 23, 0)));
  * MYSQL取得当前时间的函数是?，格式化日期的函数是
  * now(),dateformat()
  */
-
 /**
  * 写一个函数，算出两个文件的相对路径?
   function getRelativePath($a, $b) {
@@ -205,5 +204,7 @@ printr(bsort(array(1, 3, 44, 2, 134, 1, 23, 0)));
   return implode('/', $returnPath);
   }
  */
-
-
+//http://data.meilele.com:8004/phpserver.php?module=user&method=Login&param={"user_name":"tester","password":"mll123"}
+$ch = curl_init("http://www.baidu.com");
+curl_exec($ch);
+curl_close($ch);

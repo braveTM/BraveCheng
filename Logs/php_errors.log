@@ -1,0 +1,143 @@
+[08-Oct-2012 10:49:14 UTC] PHP Notice:  Uninitialized string offset: -1 in D:\wnmp\www\my.github.com\demo1.php on line 40
+[08-Oct-2012 10:49:14 UTC] PHP Stack trace:
+[08-Oct-2012 10:49:14 UTC] PHP   1. {main}() D:\wnmp\www\my.github.com\demo1.php:0
+[08-Oct-2012 10:49:14 UTC] PHP   2. ch_num() D:\wnmp\www\my.github.com\demo1.php:51
+[08-Oct-2012 10:49:59 UTC] PHP Notice:  Uninitialized string offset: -1 in D:\wnmp\www\my.github.com\demo1.php on line 40
+[08-Oct-2012 10:49:59 UTC] PHP Stack trace:
+[08-Oct-2012 10:49:59 UTC] PHP   1. {main}() D:\wnmp\www\my.github.com\demo1.php:0
+[08-Oct-2012 10:49:59 UTC] PHP   2. ch_num() D:\wnmp\www\my.github.com\demo1.php:51
+[08-Oct-2012 10:50:17 UTC] PHP Notice:  Uninitialized string offset: -1 in D:\wnmp\www\my.github.com\demo1.php on line 40
+[08-Oct-2012 10:50:17 UTC] PHP Stack trace:
+[08-Oct-2012 10:50:17 UTC] PHP   1. {main}() D:\wnmp\www\my.github.com\demo1.php:0
+[08-Oct-2012 10:50:17 UTC] PHP   2. ch_num() D:\wnmp\www\my.github.com\demo1.php:51
+[08-Oct-2012 10:50:36 UTC] PHP Notice:  Uninitialized string offset: -1 in D:\wnmp\www\my.github.com\demo1.php on line 40
+[08-Oct-2012 10:50:36 UTC] PHP Stack trace:
+[08-Oct-2012 10:50:36 UTC] PHP   1. {main}() D:\wnmp\www\my.github.com\demo1.php:0
+[08-Oct-2012 10:50:36 UTC] PHP   2. ch_num() D:\wnmp\www\my.github.com\demo1.php:51
+[08-Oct-2012 10:51:04 UTC] PHP Notice:  Uninitialized string offset: -1 in D:\wnmp\www\my.github.com\demo1.php on line 40
+[08-Oct-2012 10:51:04 UTC] PHP Stack trace:
+[08-Oct-2012 10:51:04 UTC] PHP   1. {main}() D:\wnmp\www\my.github.com\demo1.php:0
+[08-Oct-2012 10:51:04 UTC] PHP   2. ch_num() D:\wnmp\www\my.github.com\demo1.php:51
+[08-Oct-2012 10:51:23 UTC] PHP Notice:  Uninitialized string offset: -1 in D:\wnmp\www\my.github.com\demo1.php on line 40
+[08-Oct-2012 10:51:23 UTC] PHP Stack trace:
+[08-Oct-2012 10:51:23 UTC] PHP   1. {main}() D:\wnmp\www\my.github.com\demo1.php:0
+[08-Oct-2012 10:51:23 UTC] PHP   2. ch_num() D:\wnmp\www\my.github.com\demo1.php:51
+[08-Oct-2012 10:52:59 UTC] PHP Notice:  Uninitialized string offset: -1 in D:\wnmp\www\my.github.com\demo1.php on line 40
+[08-Oct-2012 10:52:59 UTC] PHP Stack trace:
+[08-Oct-2012 10:52:59 UTC] PHP   1. {main}() D:\wnmp\www\my.github.com\demo1.php:0
+[08-Oct-2012 10:52:59 UTC] PHP   2. ch_num() D:\wnmp\www\my.github.com\demo1.php:51
+[08-Oct-2012 10:53:00 UTC] PHP Notice:  Uninitialized string offset: -1 in D:\wnmp\www\my.github.com\demo1.php on line 40
+[08-Oct-2012 10:53:00 UTC] PHP Stack trace:
+[08-Oct-2012 10:53:00 UTC] PHP   1. {main}() D:\wnmp\www\my.github.com\demo1.php:0
+[08-Oct-2012 10:53:00 UTC] PHP   2. ch_num() D:\wnmp\www\my.github.com\demo1.php:51
+[08-Oct-2012 11:00:17 UTC] PHP Notice:  Uninitialized string offset: -1 in D:\wnmp\www\my.github.com\demo1.php on line 40
+[08-Oct-2012 11:00:17 UTC] PHP Stack trace:
+[08-Oct-2012 11:00:17 UTC] PHP   1. {main}() D:\wnmp\www\my.github.com\demo1.php:0
+[08-Oct-2012 11:00:17 UTC] PHP   2. ch_num() D:\wnmp\www\my.github.com\demo1.php:51
+[08-Oct-2012 11:01:54 UTC] PHP Notice:  Uninitialized string offset: -1 in D:\wnmp\www\my.github.com\demo1.php on line 40
+[08-Oct-2012 11:01:54 UTC] PHP Stack trace:
+[08-Oct-2012 11:01:54 UTC] PHP   1. {main}() D:\wnmp\www\my.github.com\demo1.php:0
+[08-Oct-2012 11:01:54 UTC] PHP   2. ch_num() D:\wnmp\www\my.github.com\demo1.php:51
+[08-Oct-2012 11:02:54 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in D:\wnmp\www\my.github.com\demo1.php on line 211
+[08-Oct-2012 11:02:54 UTC] PHP Stack trace:
+[08-Oct-2012 11:02:54 UTC] PHP   1. {main}() D:\wnmp\www\my.github.com\demo1.php:0
+[08-Oct-2012 11:02:54 UTC] PHP Notice:  Uninitialized string offset: -1 in D:\wnmp\www\my.github.com\demo1.php on line 40
+[08-Oct-2012 11:02:54 UTC] PHP Stack trace:
+[08-Oct-2012 11:02:54 UTC] PHP   1. {main}() D:\wnmp\www\my.github.com\demo1.php:0
+[08-Oct-2012 11:02:54 UTC] PHP   2. ch_num() D:\wnmp\www\my.github.com\demo1.php:51
+[08-Oct-2012 11:02:54 UTC] PHP Notice:  Uninitialized string offset: -1 in D:\wnmp\www\my.github.com\demo1.php on line 40
+[08-Oct-2012 11:02:54 UTC] PHP Stack trace:
+[08-Oct-2012 11:02:54 UTC] PHP   1. {main}() D:\wnmp\www\my.github.com\demo1.php:0
+[08-Oct-2012 11:02:54 UTC] PHP   2. ch_num() D:\wnmp\www\my.github.com\demo1.php:51
+[08-Oct-2012 11:03:03 UTC] PHP Notice:  Uninitialized string offset: -1 in D:\wnmp\www\my.github.com\demo1.php on line 40
+[08-Oct-2012 11:03:03 UTC] PHP Stack trace:
+[08-Oct-2012 11:03:03 UTC] PHP   1. {main}() D:\wnmp\www\my.github.com\demo1.php:0
+[08-Oct-2012 11:03:03 UTC] PHP   2. ch_num() D:\wnmp\www\my.github.com\demo1.php:51
+[08-Oct-2012 11:03:05 UTC] PHP Notice:  Uninitialized string offset: -1 in D:\wnmp\www\my.github.com\demo1.php on line 40
+[08-Oct-2012 11:03:05 UTC] PHP Stack trace:
+[08-Oct-2012 11:03:05 UTC] PHP   1. {main}() D:\wnmp\www\my.github.com\demo1.php:0
+[08-Oct-2012 11:03:05 UTC] PHP   2. ch_num() D:\wnmp\www\my.github.com\demo1.php:51
+[08-Oct-2012 11:03:21 UTC] PHP Notice:  Uninitialized string offset: -1 in D:\wnmp\www\my.github.com\demo1.php on line 40
+[08-Oct-2012 11:03:21 UTC] PHP Stack trace:
+[08-Oct-2012 11:03:21 UTC] PHP   1. {main}() D:\wnmp\www\my.github.com\demo1.php:0
+[08-Oct-2012 11:03:21 UTC] PHP   2. ch_num() D:\wnmp\www\my.github.com\demo1.php:51
+[08-Oct-2012 11:04:21 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in D:\wnmp\www\my.github.com\demo1.php on line 209
+[08-Oct-2012 11:04:21 UTC] PHP Stack trace:
+[08-Oct-2012 11:04:21 UTC] PHP   1. {main}() D:\wnmp\www\my.github.com\demo1.php:0
+[08-Oct-2012 11:04:41 UTC] PHP Notice:  Uninitialized string offset: -1 in D:\wnmp\www\my.github.com\demo1.php on line 40
+[08-Oct-2012 11:04:41 UTC] PHP Stack trace:
+[08-Oct-2012 11:04:41 UTC] PHP   1. {main}() D:\wnmp\www\my.github.com\demo1.php:0
+[08-Oct-2012 11:04:41 UTC] PHP   2. ch_num() D:\wnmp\www\my.github.com\demo1.php:51
+[08-Oct-2012 11:05:43 UTC] PHP Notice:  Uninitialized string offset: -1 in D:\wnmp\www\my.github.com\demo1.php on line 40
+[08-Oct-2012 11:05:43 UTC] PHP Stack trace:
+[08-Oct-2012 11:05:43 UTC] PHP   1. {main}() D:\wnmp\www\my.github.com\demo1.php:0
+[08-Oct-2012 11:05:43 UTC] PHP   2. ch_num() D:\wnmp\www\my.github.com\demo1.php:51
+[08-Oct-2012 11:05:43 UTC] PHP Notice:  Uninitialized string offset: -1 in D:\wnmp\www\my.github.com\demo1.php on line 40
+[08-Oct-2012 11:05:43 UTC] PHP Stack trace:
+[08-Oct-2012 11:05:43 UTC] PHP   1. {main}() D:\wnmp\www\my.github.com\demo1.php:0
+[08-Oct-2012 11:05:43 UTC] PHP   2. ch_num() D:\wnmp\www\my.github.com\demo1.php:51
+[08-Oct-2012 11:06:06 UTC] PHP Notice:  Uninitialized string offset: -1 in D:\wnmp\www\my.github.com\demo1.php on line 40
+[08-Oct-2012 11:06:06 UTC] PHP Stack trace:
+[08-Oct-2012 11:06:06 UTC] PHP   1. {main}() D:\wnmp\www\my.github.com\demo1.php:0
+[08-Oct-2012 11:06:06 UTC] PHP   2. ch_num() D:\wnmp\www\my.github.com\demo1.php:51
+[08-Oct-2012 11:07:06 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in D:\wnmp\www\my.github.com\demo1.php on line 209
+[08-Oct-2012 11:07:06 UTC] PHP Stack trace:
+[08-Oct-2012 11:07:06 UTC] PHP   1. {main}() D:\wnmp\www\my.github.com\demo1.php:0
+[08-Oct-2012 11:08:00 UTC] PHP Notice:  Uninitialized string offset: -1 in D:\wnmp\www\my.github.com\demo1.php on line 40
+[08-Oct-2012 11:08:00 UTC] PHP Stack trace:
+[08-Oct-2012 11:08:00 UTC] PHP   1. {main}() D:\wnmp\www\my.github.com\demo1.php:0
+[08-Oct-2012 11:08:00 UTC] PHP   2. ch_num() D:\wnmp\www\my.github.com\demo1.php:51
+[08-Oct-2012 11:08:01 UTC] PHP Notice:  Uninitialized string offset: -1 in D:\wnmp\www\my.github.com\demo1.php on line 40
+[08-Oct-2012 11:08:01 UTC] PHP Stack trace:
+[08-Oct-2012 11:08:01 UTC] PHP   1. {main}() D:\wnmp\www\my.github.com\demo1.php:0
+[08-Oct-2012 11:08:01 UTC] PHP   2. ch_num() D:\wnmp\www\my.github.com\demo1.php:51
+[08-Oct-2012 11:08:01 UTC] PHP Notice:  Uninitialized string offset: -1 in D:\wnmp\www\my.github.com\demo1.php on line 40
+[08-Oct-2012 11:08:01 UTC] PHP Stack trace:
+[08-Oct-2012 11:08:01 UTC] PHP   1. {main}() D:\wnmp\www\my.github.com\demo1.php:0
+[08-Oct-2012 11:08:01 UTC] PHP   2. ch_num() D:\wnmp\www\my.github.com\demo1.php:51
+[08-Oct-2012 11:08:01 UTC] PHP Notice:  Uninitialized string offset: -1 in D:\wnmp\www\my.github.com\demo1.php on line 40
+[08-Oct-2012 11:08:01 UTC] PHP Stack trace:
+[08-Oct-2012 11:08:01 UTC] PHP   1. {main}() D:\wnmp\www\my.github.com\demo1.php:0
+[08-Oct-2012 11:08:01 UTC] PHP   2. ch_num() D:\wnmp\www\my.github.com\demo1.php:51
+[08-Oct-2012 11:08:01 UTC] PHP Notice:  Uninitialized string offset: -1 in D:\wnmp\www\my.github.com\demo1.php on line 40
+[08-Oct-2012 11:08:01 UTC] PHP Stack trace:
+[08-Oct-2012 11:08:01 UTC] PHP   1. {main}() D:\wnmp\www\my.github.com\demo1.php:0
+[08-Oct-2012 11:08:01 UTC] PHP   2. ch_num() D:\wnmp\www\my.github.com\demo1.php:51
+[08-Oct-2012 11:08:02 UTC] PHP Notice:  Uninitialized string offset: -1 in D:\wnmp\www\my.github.com\demo1.php on line 40
+[08-Oct-2012 11:08:02 UTC] PHP Stack trace:
+[08-Oct-2012 11:08:02 UTC] PHP   1. {main}() D:\wnmp\www\my.github.com\demo1.php:0
+[08-Oct-2012 11:08:02 UTC] PHP   2. ch_num() D:\wnmp\www\my.github.com\demo1.php:51
+[08-Oct-2012 11:08:02 UTC] PHP Notice:  Uninitialized string offset: -1 in D:\wnmp\www\my.github.com\demo1.php on line 40
+[08-Oct-2012 11:08:02 UTC] PHP Stack trace:
+[08-Oct-2012 11:08:02 UTC] PHP   1. {main}() D:\wnmp\www\my.github.com\demo1.php:0
+[08-Oct-2012 11:08:02 UTC] PHP   2. ch_num() D:\wnmp\www\my.github.com\demo1.php:51
+[08-Oct-2012 11:08:02 UTC] PHP Notice:  Uninitialized string offset: -1 in D:\wnmp\www\my.github.com\demo1.php on line 40
+[08-Oct-2012 11:08:02 UTC] PHP Stack trace:
+[08-Oct-2012 11:08:02 UTC] PHP   1. {main}() D:\wnmp\www\my.github.com\demo1.php:0
+[08-Oct-2012 11:08:02 UTC] PHP   2. ch_num() D:\wnmp\www\my.github.com\demo1.php:51
+[08-Oct-2012 11:08:44 UTC] PHP Notice:  Uninitialized string offset: -1 in D:\wnmp\www\my.github.com\demo1.php on line 40
+[08-Oct-2012 11:08:44 UTC] PHP Stack trace:
+[08-Oct-2012 11:08:44 UTC] PHP   1. {main}() D:\wnmp\www\my.github.com\demo1.php:0
+[08-Oct-2012 11:08:44 UTC] PHP   2. ch_num() D:\wnmp\www\my.github.com\demo1.php:51
+[08-Oct-2012 11:09:44 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in D:\wnmp\www\my.github.com\demo1.php on line 209
+[08-Oct-2012 11:09:44 UTC] PHP Stack trace:
+[08-Oct-2012 11:09:44 UTC] PHP   1. {main}() D:\wnmp\www\my.github.com\demo1.php:0
+[08-Oct-2012 11:09:51 UTC] PHP Notice:  Uninitialized string offset: -1 in D:\wnmp\www\my.github.com\demo1.php on line 40
+[08-Oct-2012 11:09:51 UTC] PHP Stack trace:
+[08-Oct-2012 11:09:51 UTC] PHP   1. {main}() D:\wnmp\www\my.github.com\demo1.php:0
+[08-Oct-2012 11:09:51 UTC] PHP   2. ch_num() D:\wnmp\www\my.github.com\demo1.php:51
+[08-Oct-2012 11:10:23 UTC] PHP Notice:  Uninitialized string offset: -1 in D:\wnmp\www\my.github.com\demo1.php on line 40
+[08-Oct-2012 11:10:23 UTC] PHP Stack trace:
+[08-Oct-2012 11:10:23 UTC] PHP   1. {main}() D:\wnmp\www\my.github.com\demo1.php:0
+[08-Oct-2012 11:10:23 UTC] PHP   2. ch_num() D:\wnmp\www\my.github.com\demo1.php:51
+[08-Oct-2012 11:11:23 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in D:\wnmp\www\my.github.com\demo1.php on line 209
+[08-Oct-2012 11:11:23 UTC] PHP Stack trace:
+[08-Oct-2012 11:11:23 UTC] PHP   1. {main}() D:\wnmp\www\my.github.com\demo1.php:0
+[08-Oct-2012 11:12:17 UTC] PHP Notice:  Uninitialized string offset: -1 in D:\wnmp\www\my.github.com\demo1.php on line 40
+[08-Oct-2012 11:12:17 UTC] PHP Stack trace:
+[08-Oct-2012 11:12:17 UTC] PHP   1. {main}() D:\wnmp\www\my.github.com\demo1.php:0
+[08-Oct-2012 11:12:17 UTC] PHP   2. ch_num() D:\wnmp\www\my.github.com\demo1.php:51
+[08-Oct-2012 11:12:19 UTC] PHP Notice:  Uninitialized string offset: -1 in D:\wnmp\www\my.github.com\demo1.php on line 40
+[08-Oct-2012 11:12:19 UTC] PHP Stack trace:
+[08-Oct-2012 11:12:19 UTC] PHP   1. {main}() D:\wnmp\www\my.github.com\demo1.php:0
+[08-Oct-2012 11:12:19 UTC] PHP   2. ch_num() D:\wnmp\www\my.github.com\demo1.php:51
