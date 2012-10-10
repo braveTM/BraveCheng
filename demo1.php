@@ -223,6 +223,11 @@ $dddd = '"﻿{"return":{"error":0,"result":[{"id":"1","project_type_name":"\u5e7
 if ($a = strpos($dddd, "\n")) {
     echo $a;
 }
-$return = strtr($dddd, array("\r" => '', "\n" => '', "return" => ''));
+
+echo str_replace("\n", "++", $dddd);
+
+
+
+//$return = strtr($dddd, array("\r" => '', "\n" => '', "return" => ''));
 //echo $return;
 
