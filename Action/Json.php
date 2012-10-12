@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * json数据调试
+ * UTF-8 BOM又叫UTF-8 签名,其实UTF-8 的BOM对UFT-8没有作用,是为了支持UTF-16,UTF-32才加上的
+ * BOM,BOM签名的意思就是告诉编辑器当前文件采用何种编码,方便编辑器识别,但是BOM虽然在编辑器中不显示,但是会产生输出,就像多了一个空行。
+ */
+$json_data = '{"return":{"error":0,"result":[{"id":"1","project_type_name":"\u5e73\u9762\u8bbe\u8ba1\u65b9\u6848","parent_id":"0","project_type_desc":"\n\n\u5e73\u9762\u8bbe\u8ba1\u65b9\u6848\u662f\u6307\uff0c\u6839\u636e\u7528\u6237\u63d0\u4f9b\u7684\u7684\u6237\u578b\u56fe\u3001\u5177\u4f53\u88c5\u4fee\u9700\u6c42\uff0c\u8bbe\u8ba1\u7684\u7cbe\u786e\u5408\u7406\u7684\u5e73\u9762\u5e03\u5c40\u56fe\u65b9\u6848\u3002\n"},{"id":"2","project_type_name":"\u65bd\u5de5\u8bbe\u8ba1\u65b9\u6848","parent_id":"0","project_type_desc":"\u6839\u636e\u7528\u6237\u63d0\u4f9b\u7684\u7684\u6237\u578b\u56fe\u3001\u5177\u4f53\u88c5\u4fee\u9700\u6c42\uff0c\u7ed3\u5408\u514d\u8d39\u4e0a\u9762\u6d4b\u91cf\u6570\u636e\uff0c\u8bbe\u8ba1\u7684\u7cbe\u786e\u5408\u7406\u7684\u5e73\u9762\u5e03\u5c40\u56fe\u3001\u88c5\u4fee\u6548\u679c\u56fe\u3001\u88c5\u4fee\u65bd\u5de5\u56fe\uff0c\u5e76\u4e14\u53ef\u4ee5\u6839\u636e\u9009\u6750\u505a\u51fa\u7cbe\u786e\u9884\u7b97\u7684\u65b9\u6848\u3002\uff08\u76ee\u524d\u4ec5\u9650\u6210\u90fd\u3001\u6df1\u5733\u7684\u697c\u76d8\uff09"},{"id":"3","project_type_name":"\u8f6f\u88c5\u8bbe\u8ba1\u65b9\u6848","parent_id":"0","project_type_desc":"\u8f6f\u88c5\u8bbe\u8ba1\u65b9\u6848\u662f\u6307"}]}}';
+$change = json_decode($json_data, 1);
+header("content-type:text/html;charset=utf-8");
+printr($change);
+function printr($change) {
+    echo "<pre>";
+    print_r($change);
+}
