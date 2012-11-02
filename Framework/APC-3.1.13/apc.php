@@ -27,7 +27,7 @@ $VERSION='$Id: apc.php 325483 2012-05-01 00:34:04Z rasmus $';
 ////////// READ OPTIONAL CONFIGURATION FILE ////////////
 if (file_exists("apc.conf.php")) include("apc.conf.php");
 ////////////////////////////////////////////////////////
-
+date_default_timezone_set('PRC');
 ////////// BEGIN OF DEFAULT CONFIG AREA ///////////////////////////////////////////////////////////
 
 defaults('USE_AUTHENTICATION',1);			// Use (internal) authentication - best choice if 
@@ -39,7 +39,7 @@ defaults('USE_AUTHENTICATION',1);			// Use (internal) authentication - best choi
 											//  You need to change ADMIN_PASSWORD to make
 											//  this work!
 defaults('ADMIN_USERNAME','apc'); 			// Admin Username
-defaults('ADMIN_PASSWORD','password');  	// Admin Password - CHANGE THIS TO ENABLE!!!
+defaults('ADMIN_PASSWORD','123456');  	// Admin Password - CHANGE THIS TO ENABLE!!!
 
 // (beckerr) I'm using a clear text password here, because I've no good idea how to let 
 //           users generate a md5 or crypt password in a easy way to fill it in above
