@@ -566,3 +566,19 @@
 [10-Oct-2012 10:54:46 UTC] PHP Stack trace:
 [10-Oct-2012 10:54:46 UTC] PHP   1. {main}() D:\wnmp\www\my.github.com\demo1.php:0
 [10-Oct-2012 10:54:46 UTC] PHP   2. ch_num($num = *uninitialized*, $mode = *uninitialized*) D:\wnmp\www\my.github.com\demo1.php:51
+[02-Nov-2012 07:56:17 UTC] PHP Notice:  Uninitialized string offset: -1 in D:\wnmp\www\my.github.com\demo1.php on line 40
+[02-Nov-2012 07:56:17 UTC] PHP Stack trace:
+[02-Nov-2012 07:56:17 UTC] PHP   1. {main}() D:\wnmp\www\my.github.com\demo1.php:0
+[02-Nov-2012 07:56:17 UTC] PHP   2. ch_num() D:\wnmp\www\my.github.com\demo1.php:51
+[02-Nov-2012 07:57:58 UTC] PHP Notice:  Uninitialized string offset: -1 in D:\wnmp\www\my.github.com\demo1.php on line 40
+[02-Nov-2012 07:57:58 UTC] PHP Stack trace:
+[02-Nov-2012 07:57:58 UTC] PHP   1. {main}() D:\wnmp\www\my.github.com\demo1.php:0
+[02-Nov-2012 07:57:58 UTC] PHP   2. ch_num() D:\wnmp\www\my.github.com\demo1.php:51
+[02-Nov-2012 08:03:09 UTC] PHP Notice:  Uninitialized string offset: -1 in D:\wnmp\www\my.github.com\demo1.php on line 40
+[02-Nov-2012 08:03:09 UTC] PHP Stack trace:
+[02-Nov-2012 08:03:09 UTC] PHP   1. {main}() D:\wnmp\www\my.github.com\demo1.php:0
+[02-Nov-2012 08:03:09 UTC] PHP   2. ch_num() D:\wnmp\www\my.github.com\demo1.php:51
+[02-Nov-2012 08:03:10 UTC] PHP Notice:  Uninitialized string offset: -1 in D:\wnmp\www\my.github.com\demo1.php on line 40
+[02-Nov-2012 08:03:10 UTC] PHP Stack trace:
+[02-Nov-2012 08:03:10 UTC] PHP   1. {main}() D:\wnmp\www\my.github.com\demo1.php:0
+[02-Nov-2012 08:03:10 UTC] PHP   2. ch_num() D:\wnmp\www\my.github.com\demo1.php:51
