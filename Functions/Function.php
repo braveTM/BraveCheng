@@ -128,3 +128,18 @@ function str_replace_limit($search, $replace, $subject, $limit = -1) {
         }
         return preg_replace($search, $replace, $subject, $limit);
 }
+
+
+    /**
+     * 数组开头插入键值数组
+     * @param array $arr 
+     * @param mixed $key
+     * @param mixed $val
+     * @return array
+     */
+    function array_unshift_assoc(&$arr, $key, $val) {
+        $arr = array_reverse($arr, true);
+        $arr[$key] = $val;
+        $arr = array_reverse($arr, true);
+        return $arr;
+    }
