@@ -1,0 +1,55 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta name="viewport" content="initial-scale=1.0,user-scalable=no" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style type="text/css">
+            html{height: 100%}
+            body{height: 100%;margin: 0; padding: 0;}
+            #container{height: 100%}
+        </style>
+        <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.4" ></script>
+    </head>
+    <body>
+        <div id="container"></div>
+        <script type="text/javascript">
+
+            window.onload = showMap();
+
+
+            function showMap() {
+                var address = prompt("请输入你的家乡：");
+                if (address) {
+                    showBaiduMap(address);
+                }
+            }
+
+            function showBaiduMap(address) {
+                var map = new BMap.Map("container");
+                //北京经纬度
+//            var point = new BMap.Point(116.404, 39.915);
+//            map.centerAndZoom(point, 15);
+                map.centerAndZoom(address);
+                map.enableScrollWheelZoom();
+                map.enableDoubleClickZoom();
+                map.enableKeyboard();
+                //添加控件
+                map.addControl(new BMap.NavigationControl());
+                //添加一个缩路图
+                var overview = new BMap.OverviewMapControl();
+                overview.changeView();
+                map.addControl(overview);
+                //添加一个比例尺控件
+                map.addControl(new BMap.ScaleControl());
+            }
+
+
+
+        </script>
+    </body>
+</html>
