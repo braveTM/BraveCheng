@@ -19,15 +19,16 @@ and open the template in the editor.
         <div id="container"></div>
         <script type="text/javascript">
 
-            window.onload = showMap();
-
+            window.onload = showMap('成都');
 
             function showMap() {
                 var address = prompt("请输入你的家乡：");
                 if (address) {
-                    showBaiduMap(address);
+                    if (confirm("哈哈，我已经知道了你的地址:"))
+                        showBaiduMap(address);
                 }
             }
+
 
             function showBaiduMap(address) {
                 var map = new BMap.Map("container");
@@ -35,20 +36,97 @@ and open the template in the editor.
 //            var point = new BMap.Point(116.404, 39.915);
 //            map.centerAndZoom(point, 15);
                 map.centerAndZoom(address);
+                //添加标注
+                var pon = new BMap.Point(104.037775, 30.563421);
+                var pon2 = new BMap.Point(104.064437, 30.588909);
+                var marker = new BMap.Marker(pon);
+                //标注监听
+                marker.addEventListener('click', function() {
+                    alert('这是我住的地方');
+                });
+                //添加折线
+                var polyline = new BMap.Polyline([
+                    new BMap.Point(104.036266, 30.560288),
+                    new BMap.Point(104.047801, 30.560443),
+                    new BMap.Point(104.060413, 30.560785),
+                    new BMap.Point(104.059119, 30.562371),
+                    new BMap.Point(104.05779, 30.565201),
+                    new BMap.Point(104.057394, 30.568559),
+                    new BMap.Point(104.058832, 30.578571),
+                    new BMap.Point(104.060916, 30.584603),
+                    new BMap.Point(104.060341, 30.593867),
+                ], {strokeColor: "blue", strokeWeight: 3, strokeOpacity: 1});
+                map.addOverlay(polyline);
+                //可拖拽的标注
+                marker.enableDragging();
+                marker.addEventListener("dragend", function(e) {
+//                    alert("你要将我的住的地方搬到：" + e.point.lng + "," + e.point.lat);
+                    //信息窗口
+                    var infoOpts = {
+                        width: 220,
+                        height: 200,
+                        title: '亲爱的你看到了吗？'
+                    }
+                    var infoWindow = new BMap.InfoWindow("你要将我的住的地方搬到：" + e.point.lng + "," + e.point.lat, infoOpts);
+                    map.openInfoWindow(infoWindow, map.getCenter());
+                });
+
+                var marker2 = new BMap.Marker(pon2);
+                //标注监听
+                marker2.addEventListener('click', function() {
+                    alert("这是我上班的地方！");
+                })
+                map.addOverlay(marker);
+                map.addOverlay(marker2);
+                //属性
                 map.enableScrollWheelZoom();
                 map.enableDoubleClickZoom();
                 map.enableKeyboard();
+                var opts = {anchor: BMAP_ANCHOR_TOP_LEFT, offset: new BMap.Size(60, 15)};
+                var naviga = {type: BMAP_NAVIGATION_CONTROL_ZOOM, showZoomInfo: true}
                 //添加控件
-                map.addControl(new BMap.NavigationControl());
+                map.addControl(new BMap.NavigationControl(naviga));
                 //添加一个缩路图
-                var overview = new BMap.OverviewMapControl();
+                var overview = new BMap.OverviewMapControl(opts);
                 overview.changeView();
                 map.addControl(overview);
                 //添加一个比例尺控件
                 map.addControl(new BMap.ScaleControl());
+                //添加一个地图类型控件
+                map.addControl(new BMap.MapTypeControl());
+                //添加一个版权控件
+                map.addControl(new BMap.CopyrightControl(opts));
+                //添加自定义插件
+                map.addControl(new ZoomControl());
             }
 
+            //自定义控件
+            function ZoomControl() {
+                // 设置默认停靠位置和偏移量  
+                this.defaultAnchor = BMAP_ANCHOR_TOP_LEFT;
+                this.defaultOffset = new BMap.Size(150, 10);
+            }
+            // 通过JavaScript的prototype属性继承于BMap.Control  
+            ZoomControl.prototype = new BMap.Control();
 
+            ZoomControl.prototype.initialize = function(map) {
+                // 创建一个DOM元素  
+                var div = document.createElement("div");
+                // 添加文字说明  
+                div.appendChild(document.createTextNode("放大2级"));
+                // 设置样式  
+                div.style.cursor = "pointer";
+                div.style.border = "1px solid gray";
+                div.style.backgroundColor = "red";
+                // 绑定事件，点击一次放大两级  
+                div.onclick = function(e) {
+                    map.zoomTo(map.getZoom() + 2);
+                }
+                // 添加DOM元素到地图中  
+                map.getContainer().appendChild(div);
+                // 将DOM元素返回  
+                return div;
+            }
 
         </script>
     </body>
