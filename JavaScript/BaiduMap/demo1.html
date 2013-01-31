@@ -19,7 +19,7 @@ and open the template in the editor.
         <div id="container"></div>
         <script type="text/javascript">
 
-            window.onload = showMap('成都');
+            window.onload = showBaiduMap('成都');
 
             function showMap() {
                 var address = prompt("请输入你的家乡：");
@@ -46,15 +46,27 @@ and open the template in the editor.
                 });
                 //添加折线
                 var polyline = new BMap.Polyline([
-                    new BMap.Point(104.036266, 30.560288),
-                    new BMap.Point(104.047801, 30.560443),
-                    new BMap.Point(104.060413, 30.560785),
-                    new BMap.Point(104.059119, 30.562371),
-                    new BMap.Point(104.05779, 30.565201),
-                    new BMap.Point(104.057394, 30.568559),
-                    new BMap.Point(104.058832, 30.578571),
-                    new BMap.Point(104.060916, 30.584603),
-                    new BMap.Point(104.060341, 30.593867),
+                    new BMap.Point(104.041118, 30.564009),
+                    new BMap.Point(104.040381, 30.562003),
+                    new BMap.Point(104.039555, 30.558784),
+                    new BMap.Point(104.038737, 30.557641),
+                    new BMap.Point(104.040525, 30.557463),
+                    new BMap.Point(104.042564, 30.557237),
+                    new BMap.Point(104.043633, 30.557245),
+                    new BMap.Point(104.046292, 30.556934),
+                    new BMap.Point(104.050029, 30.557058),
+                    new BMap.Point(104.052831, 30.557121),
+                    new BMap.Point(104.055778, 30.557183),
+                    new BMap.Point(104.055778, 30.559608),
+                    new BMap.Point(104.06009, 30.559671),
+                    new BMap.Point(104.060593, 30.557743),
+                    new BMap.Point(104.062964, 30.557618),
+                    new BMap.Point(104.063396, 30.561474),
+                    new BMap.Point(104.062964, 30.566387),
+                    new BMap.Point(104.063827, 30.570741),
+                    new BMap.Point(104.065192, 30.575094),
+                    new BMap.Point(104.065911, 30.578825),
+                    new BMap.Point(104.066558, 30.588276),
                 ], {strokeColor: "blue", strokeWeight: 3, strokeOpacity: 1});
                 map.addOverlay(polyline);
                 //可拖拽的标注
