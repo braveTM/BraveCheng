@@ -29,6 +29,16 @@ if ($_POST['submit'] === 'OK') {
         }
     }
 }
+$client = new SoapClient('http://58.56.128.34:9001/mfs/ws/MllToMFSVehicleDileveryWs?wsdl', array('trace' => 1));
+var_dump($client->__getFunctions());
+
+$return = $client->setVehicleDileverys(array('dileveryInfo' => ''));
+
+var_dump($client->__getLastRequest());
+var_dump($client->__getLastResponse());
+
+var_dump( $client->__getLastRequestHeaders() );
+//var_export($return);
 ?>
 <form method="post">
     天气预报查询：
