@@ -81,7 +81,27 @@ function bsort($array = array()) {
     }
     return $array;
 }
+if (!function_exists('compare')) {
 
+    function compare() {
+        $args = func_get_args();
+        $count = count($args[0]);
+        $list = $args[0];
+        //控制循环的个数
+        for ($index = 1; $index < ( $count - 1); $index++) {
+            //两两比较
+            for ($j = 0; $j < ($count - $index); $j++) {
+                if ($list[$j] < $list[$j + 1]) {
+                    $temp = $list[$j];
+                    $list[$j] = $list[$j + 1];
+                    $list[$j + 1] = $temp;
+                }
+            }
+        }
+        return $list;
+    }
+
+}
 /**
  * 友好输出
  * @param mixed $expression
