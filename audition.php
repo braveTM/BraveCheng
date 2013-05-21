@@ -230,8 +230,6 @@ printr(bsort(array(1, 3, 44, 2, 134, 1, 23, 0)));
 //curl_close($ch);
 
 
-<?php
-
 /**
  * MYSQL事务：
  * 事务是作为一个单元的一组有序的数据库操作，如果组中所有的操作都成功，则认为事务成功，同时执行所有的数据库操作，即使只有一个操作失败，则也认为事务失败，同时所有的已经执行的操作都将回滚，所作用的操作都将取消
@@ -312,4 +310,55 @@ function redir($dir) {
 
 //$res = redir('/home/wwwroot');
 //echo '<pre>',var_dump($res);
-?>
+
+//快速排序（数组排序）
+function quick_sort($array) {
+if (count($array) <= 1) return $array;
+
+$key = $array[0];
+$left_arr = array();
+$right_arr = array();
+
+for ($i=1; $i<count($array); $i++){
+if ($array[$i] <= $key)
+$left_arr[] = $array[$i];
+else
+$right_arr[] = $array[$i];
+}
+
+$left_arr = quick_sort($left_arr);
+$right_arr = quick_sort($right_arr);
+
+return array_merge($left_arr, array($key), $right_arr);
+}
+2. 使用PHP描述顺序查找和二分查找（也叫做折半查找）算法，顺序查找必须考虑效率，对象可以是一个有序数组
+
+//二分查找（数组里查找某个元素）
+function bin_sch($array, $low, $high, $k){
+if ($low <= $high){
+$mid = intval(($low+$high)/2);
+if ($array[$mid] == $k){
+return $mid;
+}elseif ($k < $array[$mid]){
+return bin_sch($array, $low, $mid-1, $k);
+}else{
+return bin_sch($array, $mid+1, $high, $k);
+}
+}
+return -1;
+}
+
+//顺序查找（数组里查找某个元素）
+function seq_sch($array, $n, $k){
+$array[$n] = $k;
+for($i=0; $i<$n; $i++){
+if($array[$i]==$k){
+break;
+}
+}
+if ($i<$n){
+return $i;
+}else{
+return -1;
+}
+}
