@@ -51,4 +51,35 @@ function remove_same_muti_array($array) {
     return $new_array;
 }
 
+/**
+ * 比较多维数组差集
+ */
+if (!function_exists('diff_muti_array')) {
+
+    function diff_muti_array($a1, $a2) {
+        $diff = array();
+        foreach ($a1 as $k => $v) {
+            unset($dv);
+            if (is_int($k)) {
+                // Compare values
+                if (array_search($v, $a2) === false)
+                    $dv = $v;
+                else if (is_array($v))
+                    $dv = diff_muti_array($v, $a2[$k]);
+                if (isset($dv))
+                    $diff[] = $dv;
+            }else {
+                // Compare noninteger keys
+                if (!isset($a2[$k]))
+                    $dv = $v;
+                else if (is_array($v))
+                    $dv = diff_muti_array($v, $a2[$k]);
+                if (isset($dv))
+                    $diff[$k] = $dv;
+            }
+        }
+        return $diff;
+    }
+
+}
 ?>
