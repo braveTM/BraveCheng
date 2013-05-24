@@ -21,7 +21,7 @@ function relpaceArticeKeywords($article = '') {
 
     foreach ($ar as $val) {
         $keyword[$val['link_name']] = '<a href="' . $val['link_url'] . '">' . $val['link_name'] . '</a>';
-    }   
+    }
 
     $reg = "/<[a][^>]+>.+<\/a>/i";
     preg_match_all($reg, $article, $array);
@@ -76,4 +76,10 @@ function str_replace_limit($search, $replace, $subject, $limit = -1) {
     return preg_replace($search, $replace, $subject, $limit);
 }
 
-phpinfo();
+$a = range(0.1, 4.9, 0.1);
+
+
+$ac = array_map('array_flip', $a);
+print_r($ac);
+
+print_r($a);
