@@ -35,4 +35,14 @@
             return false;
         }
     }
+
+    function delresponse(result) {
+        if (result.error == 0) {
+            var row = rowindex(window.obj.parentNode.parentNode);
+            var tbl = document.getElementById('list');
+            tbl.deleteRow(row);
+        } else {
+            alert(result.message);
+        }
+    }
 </script>
