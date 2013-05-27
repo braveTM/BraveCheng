@@ -1,0 +1,38 @@
+<script type="text/javascript">
+
+    function in_array(stringToSearch, arrayToSearch) {
+        for (s = 0; s < arrayToSearch.length; s++) {
+            thisEntry = arrayToSearch[s].toString();
+            if (thisEntry == stringToSearch) {
+                return true;
+            }
+        }
+        return false;
+    }
+    function pack_validate() {
+        var conf = '确认你的信息无误？';
+        var errMsg = new Array();
+        var td_num = '{$count}';
+        for (i = 0; i < td_num; i++) {
+            var item = $(".arr").eq(i).val();
+            item_arr = item.split(",");
+            vel = parseInt($(".pack_name").eq(i).val());
+            if (in_array(vel, item_arr) == false) {
+                errMsg.push($('.gname').val() + '商品数量只允许在' + item + '范围内');
+            }
+        }
+        if (errMsg.length > 0) {
+            var msg = '';
+            for (i = 0; i < errMsg.length; i++) {
+                msg += "- " + errMsg[i] + "\n";
+            }
+            alert(msg);
+            return false;
+        } else {
+            if (confirm(conf)) {
+                return true;
+            }
+            return false;
+        }
+    }
+</script>
