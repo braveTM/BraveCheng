@@ -15,8 +15,6 @@ require_once(SF_ROOT_DIR . DIRECTORY_SEPARATOR . 'apps' . DIRECTORY_SEPARATOR . 
 set_time_limit(0);
 // write logs tag
 define('LOGS_IS_OPEN', TRUE);
-//log address
-define('LOGS_ADDRESS', SF_ROOT_DIR . '/frontend/sites/occa/web/scrapedata/');
 //scrape data from the urls
 $scrapeUrls = array(
     'soccer' => array(
@@ -40,7 +38,7 @@ $scrapeUrls = array(
             'rseq' => array(
                 'url' => 'http://www.tsisports.ca/fedeEcole/ligueFede/startPage.aspx?selDiv=1808&page=stat&selYear=1213', // 'http://www.sportetudiant-stats.com/collegial/volleyball-m-d1/stats/1213/stats.php',
             ),
-//            'ccaa' => 'http://www.dakstats.com/WebSync/Pages/MultiTeam/IndividualLeaders.aspx?association=22&sg=MVB&sea=ACAMVB_2012&conference=ACAMVB1_ACAA&statcode=Summary&tab=1',
+            'acaa' => 'http://www.dakstats.com/WebSync/Pages/MultiTeam/IndividualLeaders.aspx?association=22&sg=MVB&sea=ACAMVB_2012&conference=ACAMVB1_ACAA&statcode=Summary&tab=1',
             'ocaa' => 'http://ocaa.com/sports/mvball/2012-13/players?sort=ptsps',
         ),
         'womens' => array(
@@ -48,7 +46,7 @@ $scrapeUrls = array(
             'rseq' => array(
                 'url' => 'http://www.tsisports.ca/fedeEcole/ligueFede/startPage.aspx?selDiv=1807&page=stat&selYear=1213', //'http://www.sportetudiant-stats.com/collegial/volleyball-f-d1/stats/1213/stats.php',
             ),
-//            'ccaa' => 'http://www.dakstats.com/WebSync/Pages/MultiTeam/IndividualLeaders.aspx?association=22&sg=WVB&sea=ACAWVB_2012&division=ACAWVB1&statcode=Summary&tab=1',
+            'acaa' => 'http://www.dakstats.com/WebSync/Pages/MultiTeam/IndividualLeaders.aspx?association=22&sg=WVB&sea=ACAWVB_2012&division=ACAWVB1&statcode=Summary&tab=1',
             'ocaa' => 'http://ocaa.com/sports/wvball/2012-13/players?sort=ptsps',
         ),
     ),
@@ -57,18 +55,19 @@ $scrapeUrls = array(
             'ccaa' => 'http://www.dakstats.com/WebSync/Pages/MultiTeam/IndividualLeaders.aspx?association=22&sg=MBB&sea=ACAMBB_2012&division=ACAMBB1&statcode=Summary&tab=1',
             'ocaa' => 'http://ocaa.com/sports/mbkb/2012-13/players?sort=ptspg&view=&pos=sh&r=0',
             'rseq' => 'http://www.sportetudiant-stats.com/collegial/basketball-m-d1/stats/1112/confldrs.htm#conf.wki',
-//            'ccaa' => 'http://www.dakstats.com/WebSync/Pages/MultiTeam/IndividualLeaders.aspx?association=22&sg=MBB&sea=ACAMBB_2012&division=ACAMBB1&statcode=Summary&tab=1', 
+            'acaa' => 'http://www.dakstats.com/WebSync/Pages/MultiTeam/IndividualLeaders.aspx?association=22&sg=MBB&sea=ACAMBB_2012&division=ACAMBB1&statcode=Summary&tab=1',
         ),
         'womens' => array(
             'ccaa' => 'http://www.dakstats.com/WebSync/Pages/MultiTeam/IndividualLeaders.aspx?association=22&sg=WBB&sea=ACAWBB_2012&division=ACAWBB1&statcode=Summary&tab=1',
             'ocaa' => 'http://ocaa.com/sports/wbkb/2012-13/players?sort=ptspg',
             'rseq' => 'http://www.sportetudiant-stats.com/collegial/basketball-f-d1/stats/1112/confldrs.htm#conf.wki',
-//            'ccaa' => 'http://www.dakstats.com/WebSync/Pages/MultiTeam/IndividualLeaders.aspx?association=22&sg=WBB&sea=ACAWBB_2012&division=ACAWBB1&statcode=Summary&tab=1',
+            'acaa' => 'http://www.dakstats.com/WebSync/Pages/MultiTeam/IndividualLeaders.aspx?association=22&sg=WBB&sea=ACAWBB_2012&division=ACAWBB1&statcode=Summary&tab=1',
         ),
     ),
 );
+
 //collect data. this is a function start
-//scrapeUrlData($scrapeUrls);
+scrapeUrlData($scrapeUrls);
 
 /**
  * scrapeUrlData
@@ -111,19 +110,15 @@ class analysisData {
      * @param type $soccerMensAcacData
      */
     public static function soccerMensAcac($htmlDomObj, $soccerMensAcacData) {
-//        $northArr = self::upSoccerMensAcac($htmlDomObj, $soccerMensAcacData);
         $northArr = self::splitArray(self::upSoccerMensAcac($htmlDomObj, $soccerMensAcacData), array('name' => 1, 'team' => 2, 'G/Goals' => 4));
-//        $southArr = self::upSoccerMensAcac($htmlDomObj, $soccerMensAcacData, 1);
         $southArr = self::splitArray(self::upSoccerMensAcac($htmlDomObj, $soccerMensAcacData, 1), array('name' => 1, 'team' => 2, 'G/Goals' => 4));
-//        $downLeft = self::downSoccerMensAcac($htmlDomObj, $soccerMensAcacData);
         $downLeft = self::splitArray(self::downSoccerMensAcac($htmlDomObj, $soccerMensAcacData), array('name' => 1, 'team' => 2, 'GA' => 9));
-//        $downRight = self::downSoccerMensAcac($htmlDomObj, $soccerMensAcacData, 1);
         $downRight = self::splitArray(self::downSoccerMensAcac($htmlDomObj, $soccerMensAcacData, 1), array('name' => 1, 'team' => 2, 'GA' => 9));
         //merge north and south data
         $newArr = array_merge($northArr, $southArr, $downLeft, $downRight);
         //create serialize data
         $ser = serialize($newArr);
-        self::writeOver(LOGS_ADDRESS . '' . __FUNCTION__ . '.txt', $ser);
+        self::writeOver(__FUNCTION__ . '.txt', $ser);
     }
 
     public static function splitArray($array, $replace = array()) {
@@ -183,7 +178,7 @@ class analysisData {
         array_shift($theData);
         $theData = self::splitArray($theData, array('name' => 1, 'team' => 2, 'G/Goals' => 5));
         $ser = serialize($theData);
-        self::writeOver(LOGS_ADDRESS . '' . __FUNCTION__ . '.txt', $ser);
+        self::writeOver(__FUNCTION__ . '.txt', $ser);
     }
 
     /**
@@ -206,7 +201,7 @@ class analysisData {
         $theData = self::splitArray($theData, array('name' => 0, 'G/Goals' => 3));
         $htmlDomObj->clear();
         $ser = serialize($theData);
-        self::writeOver(LOGS_ADDRESS . '' . __FUNCTION__ . '.txt', $ser);
+        self::writeOver(__FUNCTION__ . '.txt', $ser);
     }
 
     /**
@@ -215,19 +210,15 @@ class analysisData {
      * @param string $data
      */
     public static function soccerWomensAcac($htmlDomObj, $soccerMensAcacData) {
-//        $northArr = self::upSoccerMensAcac($htmlDomObj, $soccerMensAcacData);
         $northArr = self::splitArray(self::upSoccerMensAcac($htmlDomObj, $soccerMensAcacData), array('name' => 1, 'team' => 2, 'G/Goals' => 4));
-//        $southArr = self::upSoccerMensAcac($htmlDomObj, $soccerMensAcacData, 1);
         $southArr = self::splitArray(self::upSoccerMensAcac($htmlDomObj, $soccerMensAcacData, 1), array('name' => 1, 'team' => 2, 'G/Goals' => 4));
-//        $downLeft = self::downSoccerMensAcac($htmlDomObj, $soccerMensAcacData);
         $downLeft = self::splitArray(self::downSoccerMensAcac($htmlDomObj, $soccerMensAcacData), array('name' => 1, 'team' => 2, 'GA' => 9));
-//        $downRight = self::downSoccerMensAcac($htmlDomObj, $soccerMensAcacData, 1);
         $downRight = self::splitArray(self::downSoccerMensAcac($htmlDomObj, $soccerMensAcacData, 1), array('name' => 1, 'team' => 2, 'GA' => 9));
         //merge north and south data
         $newArr = array_merge($northArr, $southArr, $downLeft, $downRight);
         //create serialize data
         $ser = serialize($newArr);
-        self::writeOver(LOGS_ADDRESS . '' . __FUNCTION__ . '.txt', $ser);
+        self::writeOver(__FUNCTION__ . '.txt', $ser);
     }
 
     /**
@@ -249,7 +240,7 @@ class analysisData {
         array_shift($theData);
         $theData = self::splitArray($theData, array('name' => 1, 'team' => 2, 'G/Goals' => 5));
         $ser = serialize($theData);
-        self::writeOver(LOGS_ADDRESS . '' . __FUNCTION__ . '.txt', $ser);
+        self::writeOver(__FUNCTION__ . '.txt', $ser);
     }
 
     /**
@@ -271,7 +262,7 @@ class analysisData {
         array_shift($theData);
         $theData = self::splitArray($theData, array('name' => 0, 'team' => 1, 'G/Goals' => 2));
         $ser = serialize($theData);
-        self::writeOver(LOGS_ADDRESS . '' . __FUNCTION__ . '.txt', $ser);
+        self::writeOver(__FUNCTION__ . '.txt', $ser);
     }
 
     /**
@@ -294,30 +285,24 @@ class analysisData {
         array_shift($theData);
         $theData = self::splitArray($theData, array('name' => 0, 'G/Goals' => 3));
         $ser = serialize($theData);
-        self::writeOver(LOGS_ADDRESS . '' . __FUNCTION__ . '.txt', $ser);
+        self::writeOver(__FUNCTION__ . '.txt', $ser);
     }
 
     /**
-     * volleyball Mans Ccaa
+     * volleyball mens Ccaa 
      * @param obj $htmlDomObj
      * @param string $data
      */
     public static function volleyballMensCcaa($htmlDomObj, $data) {
-//        $one = self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl02_summaryGridView');
         $one = self::splitArray(self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl02_summaryGridView'), array('name' => 1, 'team' => 2, 'kills' => 4, 'blocks' => 6));
-//        $two = self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl03_summaryGridView');
         $two = self::splitArray(self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl03_summaryGridView'), array('name' => 1, 'team' => 2, 'kills' => 4));
-//        $three = self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl04_summaryGridView');
         $three = self::splitArray(self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl04_summaryGridView'), array('name' => 1, 'team' => 2,));
-//        $four = self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl05_summaryGridView');
         $four = self::splitArray(self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl05_summaryGridView'), array('name' => 1, 'team' => 2,));
-//        $five = self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl06_summaryGridView');
         $five = self::splitArray(self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl06_summaryGridView'), array('name' => 1, 'team' => 2,));
-//        $six = self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl07_summaryGridView');
         $six = self::splitArray(self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl07_summaryGridView'), array('name' => 1, 'team' => 2,));
         $theData = array_merge($one, $two, $three, $four, $five, $six);
         $ser = serialize($theData);
-        self::writeOver(LOGS_ADDRESS . '' . __FUNCTION__ . '.txt', $ser);
+        self::writeOver(__FUNCTION__ . '.txt', $ser);
     }
 
     public static function findVolleyballMensCcaa($htmlDomObj, $data, $param) {
@@ -336,22 +321,35 @@ class analysisData {
     }
 
     /**
-     * volleyball Mans rseq
+     * volleyball mens rseq
      * @param obj $htmlDomObj
      * @param string $data
      */
     public static function volleyballMensRseq($htmlDomObj, $data) {
-//        $one = self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_ContentPlaceHolder1_statsVolley1_gridJ');
         $one = self::splitArray(self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_ContentPlaceHolder1_statsVolley1_gridJ'), array('name' => 0, 'team' => 2, 'kills' => 5, 'blocks' => 6));
-//        $two = self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_ContentPlaceHolder1_statsVolley1_gridJ2');
         $two = self::splitArray(self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_ContentPlaceHolder1_statsVolley1_gridJ2'), array('name' => 0, 'team' => 2, 'kills' => 5));
-//        $three = self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_ContentPlaceHolder1_statsVolley1_gridJ3');
         $three = self::splitArray(self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_ContentPlaceHolder1_statsVolley1_gridJ3'), array('name' => 0, 'team' => 2, 'kills' => 5));
-//        $four = self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_ContentPlaceHolder1_statsVolley1_gridJ4');
         $four = self::splitArray(self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_ContentPlaceHolder1_statsVolley1_gridJ4'), array('name' => 0, 'team' => 2));
         $theData = array_merge($one, $two, $three, $four);
         $ser = serialize($theData);
-        self::writeOver(LOGS_ADDRESS . '' . __FUNCTION__ . '.txt', $ser);
+        self::writeOver(__FUNCTION__ . '.txt', $ser);
+    }
+
+    /**
+     * volleyball mens acaa
+     * @param obj $htmlDomObj
+     * @param string $data
+     */
+    public static function volleyballMensAcaa($htmlDomObj, $data) {
+        $one = self::splitArray(self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl02_summaryGridView'), array('name' => 1, 'team' => 2, 'kills' => 4, 'blocks' => 6));
+        $two = self::splitArray(self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl03_summaryGridView'), array('name' => 1, 'team' => 2, 'kills' => 4));
+        $three = self::splitArray(self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl04_summaryGridView'), array('name' => 1, 'team' => 2,));
+        $four = self::splitArray(self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl05_summaryGridView'), array('name' => 1, 'team' => 2,));
+        $five = self::splitArray(self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl06_summaryGridView'), array('name' => 1, 'team' => 2,));
+        $six = self::splitArray(self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl07_summaryGridView'), array('name' => 1, 'team' => 2,));
+        $theData = array_merge($one, $two, $three, $four, $five, $six);
+        $ser = serialize($theData);
+        self::writeOver(__FUNCTION__ . '.txt', $ser);
     }
 
     /**
@@ -373,7 +371,7 @@ class analysisData {
         array_shift($theData);
         $theData = self::splitArray($theData, array('name' => 1, 'team' => 2, 'kills' => 5, 'blocks' => 18));
         $ser = serialize($theData);
-        self::writeOver(LOGS_ADDRESS . '' . __FUNCTION__ . '.txt', $ser);
+        self::writeOver(__FUNCTION__ . '.txt', $ser);
     }
 
     /**
@@ -382,21 +380,15 @@ class analysisData {
      * @param string $data
      */
     public static function volleyballWomensCcaa($htmlDomObj, $data) {
-//        $one = self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl02_summaryGridView');
         $one = self::splitArray(self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl02_summaryGridView'), array('name' => 1, 'team' => 2, 'kills' => 4, 'blocks' => 6));
-//        $two = self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl03_summaryGridView');
         $two = self::splitArray(self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl03_summaryGridView'), array('name' => 1, 'team' => 2, 'kills' => 4));
-//        $three = self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl04_summaryGridView');
         $three = self::splitArray(self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl04_summaryGridView'), array('name' => 1, 'team' => 2,));
-//        $four = self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl05_summaryGridView');
         $four = self::splitArray(self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl05_summaryGridView'), array('name' => 1, 'team' => 2,));
-//        $five = self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl06_summaryGridView');
         $five = self::splitArray(self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl06_summaryGridView'), array('name' => 1, 'team' => 2,));
-//        $six = self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl07_summaryGridView');
         $six = self::splitArray(self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl07_summaryGridView'), array('name' => 1, 'team' => 2,));
         $theData = array_merge($one, $two, $three, $four, $five, $six);
         $ser = serialize($theData);
-        self::writeOver(LOGS_ADDRESS . '' . __FUNCTION__ . '.txt', $ser);
+        self::writeOver(__FUNCTION__ . '.txt', $ser);
     }
 
     /**
@@ -405,21 +397,30 @@ class analysisData {
      * @param string $data
      */
     public static function volleyballWomensRseq($htmlDomObj, $data) {
-//        $one = self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_ContentPlaceHolder1_statsVolley1_gridJ');
-//        $two = self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_ContentPlaceHolder1_statsVolley1_gridJ2');
-//        $three = self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_ContentPlaceHolder1_statsVolley1_gridJ3');
-//        $four = self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_ContentPlaceHolder1_statsVolley1_gridJ4');
-        //        $one = self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_ContentPlaceHolder1_statsVolley1_gridJ');
         $one = self::splitArray(self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_ContentPlaceHolder1_statsVolley1_gridJ'), array('name' => 0, 'team' => 2, 'kills' => 5, 'blocks' => 6));
-//        $two = self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_ContentPlaceHolder1_statsVolley1_gridJ2');
         $two = self::splitArray(self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_ContentPlaceHolder1_statsVolley1_gridJ2'), array('name' => 0, 'team' => 2, 'kills' => 5));
-//        $three = self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_ContentPlaceHolder1_statsVolley1_gridJ3');
         $three = self::splitArray(self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_ContentPlaceHolder1_statsVolley1_gridJ3'), array('name' => 0, 'team' => 2, 'kills' => 5));
-//        $four = self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_ContentPlaceHolder1_statsVolley1_gridJ4');
         $four = self::splitArray(self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_ContentPlaceHolder1_statsVolley1_gridJ4'), array('name' => 0, 'team' => 2));
         $theData = array_merge($one, $two, $three, $four);
         $ser = serialize($theData);
-        self::writeOver(LOGS_ADDRESS . '' . __FUNCTION__ . '.txt', $ser);
+        self::writeOver(__FUNCTION__ . '.txt', $ser);
+    }
+
+    /**
+     * volleyball womens acaa
+     * @param obj $htmlDomObj
+     * @param string $data
+     */
+    public static function volleyballWomensAcaa($htmlDomObj, $data) {
+        $one = self::splitArray(self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl02_summaryGridView'), array('name' => 1, 'team' => 2, 'kills' => 4, 'blocks' => 6));
+        $two = self::splitArray(self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl03_summaryGridView'), array('name' => 1, 'team' => 2, 'kills' => 4));
+        $three = self::splitArray(self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl04_summaryGridView'), array('name' => 1, 'team' => 2,));
+        $four = self::splitArray(self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl05_summaryGridView'), array('name' => 1, 'team' => 2,));
+        $five = self::splitArray(self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl06_summaryGridView'), array('name' => 1, 'team' => 2,));
+        $six = self::splitArray(self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl07_summaryGridView'), array('name' => 1, 'team' => 2,));
+        $theData = array_merge($one, $two, $three, $four, $five, $six);
+        $ser = serialize($theData);
+        self::writeOver(__FUNCTION__ . '.txt', $ser);
     }
 
     /**
@@ -441,7 +442,7 @@ class analysisData {
         array_shift($theData);
         $theData = self::splitArray($theData, array('name' => 1, 'team' => 2, 'kills' => 5, 'blocks' => 18));
         $ser = serialize($theData);
-        self::writeOver(LOGS_ADDRESS . '' . __FUNCTION__ . '.txt', $ser);
+        self::writeOver(__FUNCTION__ . '.txt', $ser);
     }
 
     /**
@@ -458,7 +459,7 @@ class analysisData {
         $six = self::splitArray(self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl07_summaryGridView'), array('name' => 1, 'team' => 2, 'Avg/G' => 6));
         $theData = array_merge($one, $two, $three, $four, $five, $six);
         $ser = serialize($theData);
-        self::writeOver(LOGS_ADDRESS . '' . __FUNCTION__ . '.txt', $ser);
+        self::writeOver(__FUNCTION__ . '.txt', $ser);
     }
 
     /**
@@ -480,7 +481,7 @@ class analysisData {
         array_shift($theData);
         $theData = self::splitArray($theData, array('name' => 1, 'team' => 2, 'PPG' => 12));
         $ser = serialize($theData);
-        self::writeOver(LOGS_ADDRESS . '' . __FUNCTION__ . '.txt', $ser);
+        self::writeOver(__FUNCTION__ . '.txt', $ser);
     }
 
     /**
@@ -513,7 +514,7 @@ class analysisData {
 
         $theData = array_merge($one, $two/* , $three, $four, $five, $six, $seven, $eight, $nine, $ten, $eleven, $twelve, $thirteen */);
         $ser = serialize($theData);
-        self::writeOver(LOGS_ADDRESS . '' . __FUNCTION__ . '.txt', $ser);
+        self::writeOver(__FUNCTION__ . '.txt', $ser);
     }
 
     public static function findBasketballMensRseq($htmlDomObj, $data, $num = 0) {
@@ -532,6 +533,23 @@ class analysisData {
     }
 
     /**
+     * basketball Mens acaa
+     * @param obj $htmlDomObj
+     * @param string $data
+     */
+    public static function basketballMensAcaa($htmlDomObj, $data) {
+        $one = self::splitArray(self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl02_summaryGridView'), array('name' => 1, 'team' => 2, 'Pts' => 8, 'Pts/G' => 9));
+        $two = self::splitArray(self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl03_summaryGridView'), array('name' => 1, 'team' => 2));
+        $three = self::splitArray(self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl04_summaryGridView'), array('name' => 1, 'team' => 2, 'Avg/G' => 6));
+        $four = self::splitArray(self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl05_summaryGridView'), array('name' => 1, 'team' => 2, 'Avg/G' => 6));
+        $five = self::splitArray(self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl06_summaryGridView'), array('name' => 1, 'team' => 2, 'Avg/G' => 6));
+        $six = self::splitArray(self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl07_summaryGridView'), array('name' => 1, 'team' => 2, 'Avg/G' => 6));
+        $theData = array_merge($one, $two, $three, $four, $five, $six);
+        $ser = serialize($theData);
+        self::writeOver(__FUNCTION__ . '.txt', $ser);
+    }
+
+    /**
      * basketball womens Ccaa
      * @param obj $htmlDomObj
      * @param string $data
@@ -545,7 +563,7 @@ class analysisData {
         $six = self::splitArray(self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl07_summaryGridView'), array('name' => 1, 'team' => 2, 'Avg/G' => 6));
         $theData = array_merge($one, $two, $three, $four, $five, $six);
         $ser = serialize($theData);
-        self::writeOver(LOGS_ADDRESS . '' . __FUNCTION__ . '.txt', $ser);
+        self::writeOver(__FUNCTION__ . '.txt', $ser);
     }
 
     /**
@@ -567,7 +585,7 @@ class analysisData {
         array_shift($theData);
         $theData = self::splitArray($theData, array('name' => 1, 'team' => 2, 'PPG' => 12));
         $ser = serialize($theData);
-        self::writeOver(LOGS_ADDRESS . '' . __FUNCTION__ . '.txt', $ser);
+        self::writeOver(__FUNCTION__ . '.txt', $ser);
     }
 
     /**
@@ -600,7 +618,24 @@ class analysisData {
 
         $theData = array_merge($one, $two/* , $three, $four, $five, $six, $seven, $eight, $nine, $ten, $eleven, $twelve, $thirteen */);
         $ser = serialize($theData);
-        self::writeOver(LOGS_ADDRESS . '' . __FUNCTION__ . '.txt', $ser);
+        self::writeOver(__FUNCTION__ . '.txt', $ser);
+    }
+
+    /**
+     * basketball womens acaa
+     * @param obj $htmlDomObj
+     * @param string $data
+     */
+    public static function basketballWomensAcaa($htmlDomObj, $data) {
+        $one = self::splitArray(self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl02_summaryGridView'), array('name' => 1, 'team' => 2, 'Pts' => 8, 'Pts/G' => 9));
+        $two = self::splitArray(self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl03_summaryGridView'), array('name' => 1, 'team' => 2));
+        $three = self::splitArray(self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl04_summaryGridView'), array('name' => 1, 'team' => 2, 'Avg/G' => 6));
+        $four = self::splitArray(self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl05_summaryGridView'), array('name' => 1, 'team' => 2, 'Avg/G' => 6));
+        $five = self::splitArray(self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl06_summaryGridView'), array('name' => 1, 'team' => 2, 'Avg/G' => 6));
+        $six = self::splitArray(self::findVolleyballMensCcaa($htmlDomObj, $data, 'ctl00_websyncContentPlaceHolder_ctl07_summaryGridView'), array('name' => 1, 'team' => 2, 'Avg/G' => 6));
+        $theData = array_merge($one, $two, $three, $four, $five, $six);
+        $ser = serialize($theData);
+        self::writeOver(__FUNCTION__ . '.txt', $ser);
     }
 
     //**************************common****************************************//
@@ -612,9 +647,13 @@ class analysisData {
      * @param string $method
      */
     public static function writeOver($filename, $data, $method = "w") {
-        $paths = pathinfo($filename);
+        //get file name
+        $fileRealName = explode('.', $filename);
+        $fileRealPath = lcfirst(substr($fileRealName[0], -4));
+        $logPath = SF_ROOT_DIR . '/frontend/sites/' . $fileRealPath . '/web/scrapedata/' . $filename;
+        $paths = pathinfo($logPath);
         self::createDir($paths['dirname']);
-        $file = fopen($filename, $method);
+        $file = fopen($logPath, $method);
         flock($file, LOCK_EX);
         $filedetail = fwrite($file, $data);
         //write log
@@ -624,19 +663,6 @@ class analysisData {
             rapidManagerUtil::logMessage('File:' . $paths['basename'] . 'Write Log Error!', $getFilename[0]);
         }
         fclose($file);
-    }
-
-    /**
-     * read log
-     * @param type $filename
-     * @return type
-     */
-    public static function readOver($filename) {
-        $file = fopen($filename, "r");
-        flock($file, LOCK_SH);
-        $filedetail = fread($file, filesize($filename));
-        fclose($file);
-        return $filedetail;
     }
 
     /**
@@ -685,11 +711,37 @@ class analysisData {
 }
 
 // TEST
-$resData = '';
-$res = analysisData::curlGetData($scrapeUrls['basketball']['womens']['ccaa'], $resData);
-//$res = analysisData::curlGetData($scrapeUrls['basketball']['mens']['rseq']['url'], $resData, 1, analysisData::getCookieHeader($resData));
-if (!$res && empty($resData) && LOGS_IS_OPEN) {
-//    rapidManagerUtil::logMessage('Scrape Remote Url Data Error: can\'t open url[' . $scrapeUrls['soccer']['womens']['rseq'] . ']', '.log');
-} else {
-    analysisData::basketballWomensCcaa(new simple_html_dom(), $resData);
+//$resData = '';
+//$res = analysisData::curlGetData($scrapeUrls['basketball']['womens']['ccaa'], $resData);
+////$res = analysisData::curlGetData($scrapeUrls['basketball']['mens']['rseq']['url'], $resData, 1, analysisData::getCookieHeader($resData));
+//if (!$res && empty($resData) && LOGS_IS_OPEN) {
+////    rapidManagerUtil::logMessage('Scrape Remote Url Data Error: can\'t open url[' . $scrapeUrls['soccer']['womens']['rseq'] . ']', '.log');
+//} else {
+//    analysisData::basketballWomensCcaa(new simple_html_dom(), $resData);
+//}
+
+/**
+ * get conference file data
+ * @param string $sprtName
+ * @param string $conference
+ * @param int $gen
+ */
+function utilGetCurlConferenceData($sprtName, $conference, $gen = 1) {
+    $sex = intval($gen) === 1 ? 'Mens' : 'Womens';
+    $file = LOGS_ADDRESS . ucfirst($sprtName) . $sex . ucfirst($conference) . '.txt';
+    $content = utilReadOver($file);
+    return $content ? unserialize($content) : FALSE;
+}
+
+/**
+ * read log
+ * @param string $filename
+ * @return mixed
+ */
+function utilReadOver($filename) {
+    $file = fopen($filename, "r");
+    flock($file, LOCK_SH);
+    $filedetail = fread($file, filesize($filename));
+    fclose($file);
+    return $filedetail;
 }
