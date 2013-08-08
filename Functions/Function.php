@@ -30,6 +30,17 @@ function mkdirs($dir) {
 }
 
 /**
+ * create a directory cycle
+ * @param string $path filepath
+ */
+function createDir($path) {
+    if (!file_exists($path)) {
+        self::createDir(dirname($path));
+        mkdir($path, 0777);
+    }
+}
+
+/**
  * 根据两个数组，判断一个数组是否在另一个数组里面的算法研究
  * @param array $arr
  * @return string
