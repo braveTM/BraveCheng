@@ -233,3 +233,25 @@ function RemoveXSS($val) {
     return $val;
 }
 
+function executeDownloadCsv() {
+    $csvName = $this->getRequestParameter('csvName');
+    $csvHandle = fopen('php://output', 'w');
+    header("Content-Type: text/csv");
+    header("Content-Disposition: attachment; filename=$csvName.csv");
+    header('Cache-Control:must-revalidate,post-check=0,pre-check=0');
+    header('Expires:0');
+    header('Pragma:public');
+    if ($csvHandle) {
+        fputcsv($csvHandle, self::$config[$csvName]);
+    }
+    exit;
+}
+
+function createDirByExec($path, $mode, $user, $group) {
+    if (!file_exists($path)) {
+        self::createDir(dirname($path), $mode, $user, $group);
+        mkdir($path);
+        exec("chmod -R $mode $path");
+        exec("chown -R $user:$group $path");
+    }
+}
