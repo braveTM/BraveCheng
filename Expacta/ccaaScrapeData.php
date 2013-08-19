@@ -70,6 +70,9 @@ $scrapeUrls = array(
 
 //collect data. this is a function start
 scrapeUrlData($scrapeUrls);
+#test#
+//analysisData::curlGetData($scrapeUrls['basketball']['womens']['rseq'], $resData);
+//analysisData::basketballWomensRseq(new simple_html_dom(), $resData);
 
 /**
  * scrapeUrlData
@@ -88,7 +91,7 @@ function scrapeUrlData($scrapeUrls) {
                     if (strpos($header, "Set-Cookie") !== FALSE) {
                         $res = analysisData::curlGetData($scrapeUrls[$k1][$k2][$k3]['url'], $resData, 1, analysisData::getCookieHeader($header));
                     } else {
-                        rapidManagerUtil::logMessage('Can\'t Scrape 302 Url:[' . $scrapeUrls[$k1][$k2][$k3] . ']', '.log');
+                        rapidManagerUtil::logMessage('Can\'t Scrape 302 Url:[' . $scrapeUrls[$k1][$k2][$k3] . ']', $function . '.log');
                     }
                 } else {
                     // out with cookie
@@ -105,6 +108,22 @@ function scrapeUrlData($scrapeUrls) {
 }
 
 class analysisData {
+
+    public static $TeamIdentification = array(
+        'AHUNT' => 'Ahuntsic',
+        'ST-LAMB' => 'Ch.-St-Lambert',
+        'DAWSON' => 'Dawson',
+        'ED-MONT' => 'Edouart-Montpetit',
+        'JOHN-AB' => 'John-Abbott',
+        'LIMOILOU' => 'Limoilou',
+        'MONTMOR' => 'Montmorency',
+        'S-FOY' => 'Sainte-Foy',
+        'VANIER' => 'Vanier',
+        'ST-LAWR' => 'Ch.-St-Lawrence',
+        'T-RIV' => 'Trois-Rivieres',
+        'D.-SHERB' => 'D.-SHERB',
+        'N-FRONT' => 'N-FRONT',
+    );
 
     /**
      * soccer mens acac
@@ -133,6 +152,17 @@ class analysisData {
                     $chunked[$k][$key] = $value;
                 }
             }
+        }
+
+        //classic code. sort by code desc
+        foreach ($chunk as $item) {
+            foreach ($chunked[$item] as $k => $v) {
+                if ($v[$item]) {
+                    $code[$k] = $v[$item];
+                }
+            }
+            array_multisort($code, SORT_DESC, $chunked[$item]);
+            unset($code);
         }
         return $chunked;
     }
@@ -166,7 +196,7 @@ class analysisData {
 
     public static function scanTableData($htmlDomObj, $soccerMensAcacData, $chunkNum = 6) {
         $htmlDomObj->load($soccerMensAcacData);
-        foreach ($htmlDomObj->find('td[height=20]') as $key => $row) {
+        foreach ($htmlDomObj->find('td[height=20]') as $row) {
             $theData[] = $row->plaintext;
         }
         $htmlDomObj->clear();
@@ -492,12 +522,32 @@ class analysisData {
         $threeContent = $source->find('tr td p', 0);
         $contents = $threeContent->outertext;
         $htmlDomObj->clear();
-        $one = self::splitArray(self::findBasketballMensRseq($htmlDomObj, $contents), array('name' => 1, 'AVG' => 8));
-        $two = self::splitArray(self::findBasketballMensRseq($htmlDomObj, $contents, 1), array('name' => 1, 'AVG' => 7));
-
+        $tempOne = self::findBasketballMensRseq($htmlDomObj, $contents);
+        foreach ($tempOne as $key => $value) {
+            $tempString = self::splitString($value[1]);
+            $tempOne[$key][10] = $tempString[0];
+            $tempOne[$key][11] = $tempString[1];
+        }
+        $one = self::splitArray($tempOne, array('name' => 10, 'team' => 11, 'AVG' => 8));
+        $tempTwo = self::findBasketballMensRseq($htmlDomObj, $contents, 1);
+        foreach ($tempTwo as $key => $value) {
+            $tempString = self::splitString($value[1]);
+            $tempTwo[$key][8] = $tempString[0];
+            $tempTwo[$key][9] = $tempString[1];
+        }
+        $two = self::splitArray($tempTwo, array('name' => 8, 'team' => 9, 'AVG' => 7));
         $theData = array_merge($one, $two);
         $ser = serialize(self::diffChunk($theData, array('PPG', 'AVG')));
         self::writeOver(__FUNCTION__ . '.txt', $ser);
+    }
+
+    public static function splitString($string, $split = '-') {
+        foreach (self::$TeamIdentification as $key => $value) {
+            if (false !== strpos($string, $split . $key)) {
+                $array = explode($split . $key, $string);
+                return array($array[0], $value);
+            }
+        }
     }
 
     public static function findBasketballMensRseq($htmlDomObj, $data, $num = 0) {
@@ -575,9 +625,20 @@ class analysisData {
         $threeContent = $source->find('tr td p', 0);
         $contents = $threeContent->outertext;
         $htmlDomObj->clear();
-        $one = self::splitArray(self::findBasketballMensRseq($htmlDomObj, $contents), array('name' => 1, 'AVG' => 8));
-        $two = self::splitArray(self::findBasketballMensRseq($htmlDomObj, $contents, 1), array('name' => 1, 'AVG' => 7));
-
+        $tempOne = self::findBasketballMensRseq($htmlDomObj, $contents);
+        foreach ($tempOne as $key => $value) {
+            $tempString = self::splitString($value[1]);
+            $tempOne[$key][10] = $tempString[0];
+            $tempOne[$key][11] = $tempString[1];
+        }
+        $one = self::splitArray($tempOne, array('name' => 10, 'team' => 11, 'AVG' => 8));
+        $tempTwo = self::findBasketballMensRseq($htmlDomObj, $contents, 1);
+        foreach ($tempTwo as $key => $value) {
+            $tempString = self::splitString($value[1]);
+            $tempTwo[$key][8] = $tempString[0];
+            $tempTwo[$key][9] = $tempString[1];
+        }
+        $two = self::splitArray($tempTwo, array('name' => 8, 'team' => 9, 'AVG' => 7));
         $theData = array_merge($one, $two);
         $ser = serialize(self::diffChunk($theData, array('PPG', 'AVG')));
         self::writeOver(__FUNCTION__ . '.txt', $ser);
@@ -607,10 +668,11 @@ class analysisData {
     public static function writeOver($filename, $data, $method = "w") {
         //get file name
         $fileRealName = explode('.', $filename);
-        $fileRealPath = lcfirst(substr($fileRealName[0], -4));
+        //lcfirst is not exsit in PHP<5.3, strtolower replace it 
+        $fileRealPath = strtolower(substr($fileRealName[0], -4));
         $logPath = CCAA_LOG_PATH . $fileRealPath . '/' . $filename;
         $paths = pathinfo($logPath);
-        self::createDir($paths['dirname']);
+        rapidManagerUtil::createDir($paths['dirname'], '775', 'brave.cheng', 'design');
         $file = fopen($logPath, $method);
         flock($file, LOCK_EX);
         $filedetail = fwrite($file, $data);
@@ -618,20 +680,9 @@ class analysisData {
         if (!$filedetail && LOGS_IS_OPEN) {
             //get filename
             $getFilename = explode('.', $paths['basename']);
-            rapidManagerUtil::logMessage('File:' . $paths['basename'] . 'Write Log Error!', $getFilename[0]);
+            rapidManagerUtil::logMessage('File:' . $file . $paths['basename'] . ' Write Log Error: file path is ' . $logPath . $data, $getFilename[0] . '.log');
         }
         fclose($file);
-    }
-
-    /**
-     * create a directory cycle
-     * @param string $path filepath
-     */
-    public static function createDir($path) {
-        if (!file_exists($path)) {
-            self::createDir(dirname($path));
-            mkdir($path, 0777);
-        }
     }
 
     public static function curlGetData($url, &$data, $header = 1, $cookie = '') {
@@ -668,41 +719,3 @@ class analysisData {
 
 }
 
-/**
- * get conference file data
- * @param string $sportName
- * @param string $conference
- * @param int $genderId
- */
-function utilGetCurlConferenceData($sportName, $conference, $genderId = 1) {
-    $logPath = SF_ROOT_DIR . '/frontend/sites/ccaa/web/scrapedata/' . $conference . '/';
-    $sex = intval($genderId) === 1 ? 'Mens' : 'Womens';
-    $file = $logPath . $sportName . $sex . ucfirst($conference) . '.txt';
-    $content = utilReadOver($file);
-    $res = $content ? unserialize($content) : FALSE;
-    return $res;
-}
-
-/**
- * read log
- * @param string $filename
- * @return mixed
- */
-function utilReadOver($filename) {
-    $file = fopen($filename, "r");
-    flock($file, LOCK_SH);
-    $filedetail = fread($file, filesize($filename));
-    fclose($file);
-    return $filedetail;
-}
-
-/**
- * create a directory cycle
- * @param string $path filepath
- */
-function createDir($path) {
-    if (!file_exists($path)) {
-        self::createDir(dirname($path));
-        mkdir($path, 0777);
-    }
-}
