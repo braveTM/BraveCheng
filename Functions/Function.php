@@ -255,3 +255,51 @@ function createDirByExec($path, $mode, $user, $group) {
         exec("chown -R $user:$group $path");
     }
 }
+
+
+/**
+ * get conference file data multi-array sort and multi-array merge
+ * @param string $sportName
+ * @param int $genderId
+ */
+function utilGetCurlConferenceData($sportName, $genderId) {
+    $new = array('PPG' => array(), 'AVG' => array());
+    $conference = array(
+        'acaa',
+        'acac',
+        'ocaa',
+        'pacwest',
+        'rseq',
+    );
+    $sex = intval($genderId) === 1 ? 'Mens' : 'Womens';
+    $keys = array_keys($new);
+    foreach ($conference as $con) {
+        $logPath = SF_ROOT_DIR . '/frontend/sites/ccaa/web/scrapedata/' . $con . '/';
+        $mens = $logPath . $sportName . $sex . ucfirst($con) . '.txt';
+        $content = utilReadOver($mens);
+        $res = $content ? unserialize($content) : FALSE;
+        foreach ($res as $key => $value) {
+            if (in_array($key, $keys)) {
+                if ($res[$key]) {
+                    $new[$key] = array_merge($new[$key], $res[$key]);
+                }
+            }
+            unset($value);
+        }
+    }
+
+    //classic code. sort by code desc
+    foreach ($keys as $item) {
+        foreach ($new[$item] as $k => $v) {
+            if ($v[$item]) {
+                $code[$k] = $v[$item];
+            }
+        }
+        if ($item == 'GA') {
+            array_multisort($code, SORT_ASC, $new[$item]);
+        } else {
+            array_multisort($code, SORT_DESC, $new[$item]);
+        }
+        unset($code);
+    }
+}
