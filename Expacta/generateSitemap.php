@@ -17,7 +17,7 @@ if (!isset($_SERVER['argv'][1]) || empty($_SERVER['argv'][1])) {
 $_SERVER['DB_CONNECT_NAME'] = $_SERVER['argv'][1];
 $pidFile .= strtolower($_SERVER['argv'][1]) . "_";
 
-$pidFile .= 'generateSetmap.pid';
+$pidFile .= 'generateSitemap.pid';
 echo "PID file: {$pidFile} \n";
 start();
 
@@ -27,8 +27,8 @@ $databaseManager = new sfDatabaseManager();
 $databaseManager->initialize();
 
 try {
-    $setmap = new setmapQueue();
-    $setmap->dequeue();
+    $setmap = new sitemapQueue();
+    $setmap->processingQueue();
 } catch (Exception $ex) {
     echo $ex->getMessage(), "\n";
 }
