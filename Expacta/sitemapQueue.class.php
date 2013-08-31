@@ -67,13 +67,13 @@ class sitemapQueue extends rmQueue {
                 file_exists($this->sitemapTempXml) && unlink($this->sitemapTempXml);
                 $this->fileHandle = fopen($this->sitemapTempXml, 'ab');
                 //write sitemap header
-                $this->writeSitemapContent($this->sitemapHeader[0]);
+                $this->writeFileHandleByAppendMode($this->sitemapHeader[0]);
                 //write section url
                 $this->loopWriteSectionSitemapUrl($currentSiteId);
                 //write page url
                 $this->loopWritePageSitemapUrl($currentSiteId);
                 //write sitemap footer
-                $this->writeSitemapContent($this->sitemapHeader[1]);
+                $this->writeFileHandleByAppendMode($this->sitemapHeader[1]);
                 fclose($this->fileHandle);
                 if (rename($this->sitemapTempXml, $this->sitemapXml) === false) {
                     rapidManagerUtil::logMessage('rename ' . $this->sitemapTempXmlXml . ' to ' . $this->sitemapXml . ' error.', self::$errorLog);
@@ -104,10 +104,10 @@ class sitemapQueue extends rmQueue {
                 $subSectionArray = $this->loopWriteSectionSitemapUrl($siteId, $sectionArray['ID']);
                 if ($subSectionArray) {
                     $subContent = $this->assemblySingleSectionOrPageUrl($subSectionArray);
-                    $this->writeSitemapContent($subContent);
+                    $this->writeFileHandleByAppendMode($subContent);
                 }
                 $content = $this->assemblySingleSectionOrPageUrl($sectionArray);
-                $this->writeSitemapContent($content);
+                $this->writeFileHandleByAppendMode($content);
             }
         }
     }
@@ -130,7 +130,7 @@ class sitemapQueue extends rmQueue {
         if (!is_null($rs)) {
             while ($pageArray = mysql_fetch_assoc($rs->getResource())) {
                 $content = $this->assemblySingleSectionOrPageUrl($pageArray, false);
-                $this->writeSitemapContent($content);
+                $this->writeFileHandleByAppendMode($content);
             }
         }
     }
@@ -149,7 +149,7 @@ class sitemapQueue extends rmQueue {
         $this->sitemapXml = SF_ROOT_DIR . '/frontend/sites/' . $this->site->getCode() . '/web/sitemap.xml';
     }
 
-    private function writeSitemapContent($content) {
+    private function writeFileHandleByAppendMode($content) {
         if (fwrite($this->fileHandle, $content) === false) {
             rapidManagerUtil::logMessage($this->sitemapTempXml . 'write error:' . $content, self::$errorLog);
         }
