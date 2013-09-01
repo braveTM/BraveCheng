@@ -1144,7 +1144,7 @@ class rapidManagerUtil {
         $flipRank = $newArray = $rank = array();
         $i = 1;
         foreach ($array as $unSortedData) {
-            $nowKey = intval($unSortedData[$key]);
+            $nowKey = number_format($unSortedData[$key], 2, '.', '00');
             if (in_array($nowKey, $rank)) {
                 $unSortedData['rank'] = $flipRank[$nowKey];
             } else {
