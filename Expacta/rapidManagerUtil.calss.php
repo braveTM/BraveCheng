@@ -218,22 +218,20 @@ class rapidManagerUtil {
         return $domainNames;
     }
 
-    public static function getFrontendSiteCacheDir($siteCode = "") {
-        if (empty($siteCode))
-            $siteCode = rm2Util::getSiteCode();
+    public static function getFrontendSiteCacheDir($siteCode=""){
+        if(empty($siteCode)) $siteCode = rm2Util::getSiteCode();
         $cacheDir = SF_ROOT_DIR . DIRECTORY_SEPARATOR . 'frontend' . DIRECTORY_SEPARATOR . 'cache' . DIRECTORY_SEPARATOR . strtolower($siteCode) . DIRECTORY_SEPARATOR;
-        if (!file_exists($cacheDir)) {
+        if(!file_exists($cacheDir)){
             @mkdir($cacheDir, 0777, true);
         }
         return $cacheDir;
     }
 
-    public static function getStaticCacheDir($siteCode = "") {
-        if (empty($siteCode))
-            $siteCode = rm2Util::getSiteCode();
+    public static function getStaticCacheDir($siteCode=""){
+        if(empty($siteCode)) $siteCode = rm2Util::getSiteCode();
         $cacheDir = SF_ROOT_DIR . DIRECTORY_SEPARATOR . 'frontend' . DIRECTORY_SEPARATOR . 'sites' . DIRECTORY_SEPARATOR . strtolower($siteCode) . DIRECTORY_SEPARATOR . 'web' . DIRECTORY_SEPARATOR . 'temp' . DIRECTORY_SEPARATOR;
         $staticCacheDir = $cacheDir . DIRECTORY_SEPARATOR . 'static' . DIRECTORY_SEPARATOR;
-        if (!file_exists($staticCacheDir)) {
+        if(!file_exists($staticCacheDir)){
             @mkdir($staticCacheDir, 0777, true);
         }
         return $staticCacheDir;
@@ -834,7 +832,7 @@ class rapidManagerUtil {
             } elseif ($fromTimeZone < 0) {
                 $fromTimeZone = 'Etc/GMT+' . abs($fromTimeZone);
             } elseif ($fromTimeZone > 0) {
-                $fromTimeZone = 'Etc/GMT-' . $fromTimeZone * 1;
+                $fromTimeZone = 'Etc/GMT-' . $fromTimeZone*1;
             }
         }
         if (preg_match('/^[-|+][0-9]{1,}$/', $toTimeZone)) {
@@ -844,7 +842,7 @@ class rapidManagerUtil {
             } elseif ($toTimeZone < 0) {
                 $toTimeZone = 'Etc/GMT+' . abs($toTimeZone);
             } elseif ($toTimeZone > 0) {
-                $toTimeZone = 'Etc/GMT-' . $toTimeZone * 1;
+                $toTimeZone = 'Etc/GMT-' . $toTimeZone*1;
             }
         }
 //        echo $fromTimeZone;echo $toTimeZone;
@@ -869,25 +867,26 @@ class rapidManagerUtil {
         }
     }
 
-    public static function convertTimeToUTC($launchDate, $launchHour, $expiryDate, $expiryHour, $timezone, $totimezone = '+0') {
+    public static function convertTimeToUTC($launchDate, $launchHour, $expiryDate, $expiryHour, $timezone,$totimezone='+0') {
         $rs = array();
         if ($launchDate) {
             $utcLauchTime = rapidManagerUtil::convertTimeByTimeZone($timezone, $totimezone, $launchDate . ' ' . $launchHour);
             //echo  $utcLauchTime;exit;
             $utcLauchTime = explode(' ', $utcLauchTime);
-
+            
             $rs['launchDate'] = $utcLauchTime[0];
             $rs['launchHour'] = $utcLauchTime[1];
+            
         }
         if ($expiryDate) {
-            $utcExpiryTime = rapidManagerUtil::convertTimeByTimeZone($timezone, $totimezone, $expiryDate . ' ' . $expiryHour);
+            $utcExpiryTime = rapidManagerUtil::convertTimeByTimeZone($timezone,$totimezone, $expiryDate . ' ' . $expiryHour);
             $utcExpiryTime = explode(' ', $utcExpiryTime);
             $rs['expiryDate'] = $utcExpiryTime[0];
             $rs['expiryHour'] = $utcExpiryTime[1];
         }
 
 
-
+       
         return $rs;
     }
 
@@ -1090,8 +1089,8 @@ class rapidManagerUtil {
         fclose($handle);
         return true;
     }
-
-    public static function createDir($path, $mode, $user, $group) {
+    
+   public static function createDir($path, $mode, $user, $group) {
         if (!file_exists($path)) {
             self::createDir(dirname($path), $mode, $user, $group);
             mkdir($path);
@@ -1099,8 +1098,8 @@ class rapidManagerUtil {
             exec("chown -R $user:$group $path");
         }
     }
-
-    public static function writePathLogs($logPath, $data, $method = 'w') {
+   
+   public static function writePathLogs($logPath, $data, $method = 'w') {
         $paths = pathinfo($logPath);
         $file = fopen($logPath, $method);
         flock($file, LOCK_EX);
@@ -1112,7 +1111,7 @@ class rapidManagerUtil {
             rapidManagerUtil::logMessage('File:' . $file . $paths['basename'] . ' Write Log Error: file path is ' . $logPath . $data, $getFilename[0] . '.log');
         }
         fclose($file);
-    }
+    } 
 
     /**
      * read log
@@ -1126,8 +1125,8 @@ class rapidManagerUtil {
         $filedetail = fread($file, filesize($filename));
         fclose($file);
         return $filedetail;
-    }
-
+    } 
+    
     public static function removeSameInMultiArray($array = array()) {
         $tmp_array = array();
         $new_array = array();
@@ -1141,42 +1140,16 @@ class rapidManagerUtil {
         return $new_array;
     }
 
-    public static function combineSameValueArray($orginArray, $keysArray) {
-        $ids = $sameCount = $returnArray = $newIds = array();
-        foreach ($keysArray as $curKey) {
-            foreach ($orginArray[$curKey] as $v) {
-                $ids[] = $v[$curKey];
-            }
-            foreach ($ids as $newkey => $value) {
-                $newIds[$value][] = $newkey;
-            }
-            foreach ($ids as $value) {
-                $sameCount[$value]++;
-            }
-            foreach ($orginArray[$curKey] as $key => $value) {
-                $step = $sameCount[$value[$curKey]];
-                if ($step > 1) {
-                    $value['rank'] = $newIds[$value[$curKey]][0];
-                    $returnArray[$curKey][$key] = $value;
-                } else {
-                    $value['rank'] = $key;
-                    $returnArray[$curKey][$key] = $value;
-                }
-            }
-            unset($ids, $sameCount, $newIds);
-        }
-        return $returnArray;
-    }
-
     public static function appendRankByKey($array, $key) {
         $flipRank = $newArray = $rank = array();
         $i = 1;
         foreach ($array as $unSortedData) {
-            if (in_array($unSortedData[$key], $rank)) {
-                $unSortedData['rank'] = $flipRank[$unSortedData[$key]];
+            $nowKey = intval($unSortedData[$key]);
+            if (in_array($nowKey, $rank)) {
+                $unSortedData['rank'] = $flipRank[$nowKey];
             } else {
                 $unSortedData['rank'] = $i;
-                $rank[$i] = $unSortedData[$key];
+                $rank[$i] = $nowKey;
                 $flipRank = array_flip($rank);
             }
             $newArray[$i] = $unSortedData;
@@ -1184,5 +1157,4 @@ class rapidManagerUtil {
         }
         return $newArray;
     }
-
 }
