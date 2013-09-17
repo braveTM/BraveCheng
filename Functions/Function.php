@@ -7,6 +7,7 @@
  * @return type
  */
 function getCategoryID($catid, &$str = '') {
+    // if this function in class, $url must be set static
     $url = $GLOBALS['_module']->getDataByMod("mod_designer.GetCategoryID", array("catparent" => $catid));
     if ($url) {
         foreach ($url as $value) {
